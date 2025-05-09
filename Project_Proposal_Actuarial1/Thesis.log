@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 MAY 2025 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 MAY 2025 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1348,333 +1348,26 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 (C:\Users\KENNIX\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.de
 f
 File: blx-compat.def 2016/03/03 v3.3 biblatex compatibility (PK/JW/AB)
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.142 ...rting' option to '\string\printbiblist'}}
-                                                  
-The option 'sortlos' is already defined.
-
-! Undefined control sequence.
-l.144 \blx@kv@defkey
-                    {blx@bib1}{sorting}{%
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 \blx@kv@defkey{b
-                      lx@bib1}{sorting}{%
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer
- supported.
-(biblatex)                Please use 'sorting' option to '\newrefcontext'.
-
-! Undefined control sequence.
-l.149 \blx@kv@defkey
-                    {blx@biblist1}{sorting}{%
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.149 \blx@kv@defkey{b
-                      lx@biblist1}{sorting}{%
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: 'sorting' option to '\printbiblist' is no longer supp
-orted.
-(biblatex)                Please use 'sorting' option to '\newrefcontext'.
-
-! Undefined control sequence.
-l.154 \blx@kv@defkey
-                    {blx@bib2}{prefixnumbers}{%
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.154 \blx@kv@defkey{b
-                      lx@bib2}{prefixnumbers}{%
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: 'prefixnumbers' option to '\printbibliography' is no 
-longer supported.
-(biblatex)                Please use 'labelprefix' option to '\newrefcontext'.
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164   \blx@autolang@i{#1}}
-                            
-The option 'babel' is already defined.
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.170   \settoggle{blx@skipbiblist}{#1}}
-                                        
-The option 'skiplos' is already defined.
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.175   \settoggle{blx@skipbiblist}{#1}}
-                                        
-The option 'skiplos' is already defined.
-
-! Undefined control sequence.
-l.178 \blx@kv@defkey
-                    {blx@latem@field}{compound}{% deprecated
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.178 \blx@kv@defkey{b
-                      lx@latem@field}{compound}{% deprecated
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: Ignored 'compound' option to '\field' in '\DeclareLab
-elalphaNameTemplate'
-(biblatex)                This is now the 'compound' option of '\namepart ' in
-(biblatex)                '\DeclareLabelalphaNameTemplate'.
-
-! Undefined control sequence.
-l.183 \blx@kv@defkey
-                    {blx@latem@field}{pcompound}{% deprecated
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Ignored 'pcompound' option to '\field' in '\DeclareLa
-belalphaNameTemplate'
-(biblatex)                This is now the 'compound' option of '\namepart' in
-(biblatex)                '\DeclareLabelalphaNameTemplate'.
-
-! Undefined control sequence.
-l.188 \blx@kv@defkey
-                    {blx@latem@field}{pstrwidth}{% deprecated
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Ignored 'pstrwidth' option to '\field' in '\DeclareLa
-belalphaNameTemplate'
-(biblatex)                This is now the 'strwidth' option of '\namepart' in
-(biblatex)                '\DeclareLabelalphaNameTemplate'.
-
-
-Overfull \hbox (31.75534pt too wide) in paragraph at lines 178--193
-[]\OT1/cmr/m/n/12 blx@latem@fieldcompound blx@latem@fieldpcompound blx@latem@fi
-eldpstrwidth 
- []
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.206   \settoggle{abx@bool@giveninits}{#1}}
-                                            
-The option 'firstinits' is already defined.
-
-! Undefined control sequence.
-l.220 \blx@kv@defkey
-                    {blx@refcontext}{prefixnumbers}{%LEGACY(<3.3)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.220 \blx@kv@defkey{b
-                      lx@refcontext}{prefixnumbers}{%LEGACY(<3.3)
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: prefixnumbers option to '\newrefcontext' has been ren
-amed.
-(biblatex)                Please use 'labelprefix' option instead.
-
-! Undefined control sequence.
-l.224   \blx@kv@setkeys
-                       {blx@refcontext}{labelprefix=#1}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! You can't use `macro parameter character #' in horizontal mode.
-l.224 ...@kv@setkeys{blx@refcontext}{labelprefix=#
-                                                  1}}
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Undefined control sequence.
-l.227 \blx@kv@defkey
-                    {blx@bib1}{prefixnumbers}{}%LEGACY(<3.4) legacy name for...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.227 \blx@kv@defkey{b
-                      lx@bib1}{prefixnumbers}{}%LEGACY(<3.4) legacy name for...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-l.228 \DeprecateFieldWithReplacement
-                                    {prefixnumber}{labelprefix}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.236 ...lx@kv@setkeys{blx@opt@pre}{labeldate=#1}}
-                                                  
-The option 'datelabel' is already defined.
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.242   \settoggle{blx@labeldateparts}{#1}}
-                                           
-The option 'labelyear' is already defined.
-
-
-! Package biblatex Error: Conflicting options.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.247   \settoggle{blx@labeldateparts}{#1}}
-                                           
-The option 'labelyear' is already defined.
-
 )
+Runaway argument?
+{\blx@warning@noline {'sortlos' option is deprecated.\MessageBreak \par \ETC.
+! File ended while scanning use of \blx@defbibopt.
+<inserted text> 
+                \par 
+l.10438 ...compat.def}{compatibility code}{}{}{}{}
+                                                  
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex_legacy.def' found.
- (biblatex_legacy.def
+(biblatex_legacy.def
 File: biblatex_legacy.def 
 \c@textcitecount=\count508
 \c@textcitetotal=\count509
 \c@textcitemaxnames=\count510
-
-
-! LaTeX Error: Command \mkrelatedstring already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 \newcommand{\mkrelatedstring}{\mainlang}
-                                              
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 \c@biburlnumpenalty=\count511
 \c@biburlucpenalty=\count512
 \c@biburllcpenalty=\count513
@@ -1698,7 +1391,8 @@ File: standard.bbx 2016/03/03 v3.3 biblatex bibliography style (PK/JW/AB)
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
- (authoryear.cbx
+
+(authoryear.cbx
 File: authoryear.cbx 2016/03/03 v3.3 biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -1867,15 +1561,12 @@ Package biblatex Info: Reference section=0 on input line 34.
 Package biblatex Info: Reference segment=0 on input line 34.
 
 
-[1{C:/Users/KENNIX/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/K
-ENNIX/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-]
-
 [1
 
 
-]
+
+{C:/Users/KENNIX/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/KEN
+NIX/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
 ------------------------------------------------------------------------------
  Declaration by the Students
 ------------------------------------------------------------------------------
@@ -2130,7 +1821,7 @@ Chapter 3.
 [11]
 ! Misplaced alignment tab character &.
 l.226 ...\frac{x-\mu}{\sigma}\right)^{2}}\right) &
-                                                  \; \mu,\sigma >0,  &\; -\i...
+                                                  \; \mu,\sigma >0, &\; -\in...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2139,7 +1830,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.226 ...\right)^{2}}\right) &\; \mu,\sigma >0,  &
+l.226 ...}\right)^{2}}\right) &\; \mu,\sigma >0, &
                                                   \; -\infty < x < \infty
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -2172,7 +1863,7 @@ Chapter 4.
 [19
 
 ]
-<screenshot006.png, id=507, 366.61969pt x 507.39563pt>
+<screenshot006.png, id=502, 366.61969pt x 507.39563pt>
 File: screenshot006.png Graphic file (type png)
 <use screenshot006.png>
 Package pdftex.def Info: screenshot006.png  used on input line 52.
@@ -2184,7 +1875,7 @@ Package pdftex.def Info: screenshot006.png  used on input line 52.
 [21]
 
 [22]
-<screenshot005.png, id=529, 1028.34187pt x 538.26094pt>
+<screenshot005.png, id=524, 1028.34187pt x 538.26094pt>
 File: screenshot005.png Graphic file (type png)
 <use screenshot005.png>
 Package pdftex.def Info: screenshot005.png  used on input line 155.
@@ -2247,10 +1938,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 ### bottom level
 (\end occurred when \iftrue on line 34 was incomplete) 
 Here is how much of TeX's memory you used:
- 34414 strings out of 469941
- 643569 string characters out of 5468947
- 1272349 words of memory out of 5000000
- 60416 multiletter control sequences out of 15000+600000
+ 34404 strings out of 469941
+ 643367 string characters out of 5468947
+ 1271318 words of memory out of 5000000
+ 60407 multiletter control sequences out of 15000+600000
  672379 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,105p,2225b,4864s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2263,19 +1954,17 @@ s/cm/cmmi10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmmib10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cmextra/cmmib9.pfb><C:/Users/KENNIX/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/KENNIX/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/KENNIX/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
-/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb
-><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb
-><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb
-><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pf
-b><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.p
-fb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
-pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8
-a.pfb>
-Output written on Thesis.pdf (43 pages, 359248 bytes).
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/KENNIX/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/User
+s/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/User
+s/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/User
+s/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Use
+rs/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Us
+ers/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/U
+sers/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Thesis.pdf (42 pages, 345051 bytes).
 PDF statistics:
- 675 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
+ 665 PDF objects out of 1000 (max. 8388607)
+ 166 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 
