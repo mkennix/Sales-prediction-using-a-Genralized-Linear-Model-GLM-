@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 MAY 2025 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 MAY 2025 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1349,332 +1349,6 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 f
 File: blx-compat.def 2016/03/03 v3.3 biblatex compatibility (PK/JW/AB)
 
-! Undefined control sequence.
-l.122 \blx@kv@defkey
-                    {blx@bib}{maxnames}{\blx@warn@depropt{maxnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 \blx@kv@defkey{b
-                      lx@bib}{maxnames}{\blx@warn@depropt{maxnames}}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxnames'.
-
-! Undefined control sequence.
-l.123 \blx@kv@defkey
-                    {blx@los}{maxnames}{\blx@warn@depropt{maxnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxnames'.
-
-! Undefined control sequence.
-l.124 \blx@kv@defkey
-                    {blx@bbs}{maxnames}{\blx@warn@depropt{maxnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxnames'.
-
-! Undefined control sequence.
-l.125 \blx@kv@defkey
-                    {blx@bbg}{maxnames}{\blx@warn@depropt{maxnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxnames'.
-
-! Undefined control sequence.
-l.126 \blx@kv@defkey
-                    {blx@bbc}{maxnames}{\blx@warn@depropt{maxnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxnames'.
-
-
-Overfull \hbox (0.74872pt too wide) in paragraph at lines 122--127
-[]\OT1/cmr/m/n/12 blx@bibmaxnames blx@losmaxnames blx@bbsmaxnames blx@bbgmaxnam
-es
- []
-
-! Undefined control sequence.
-l.128 \blx@kv@defkey
-                    {blx@bib}{minnames}{\blx@warn@depropt{minnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 \blx@kv@defkey{b
-                      lx@bib}{minnames}{\blx@warn@depropt{minnames}}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minnames'.
-
-! Undefined control sequence.
-l.129 \blx@kv@defkey
-                    {blx@los}{minnames}{\blx@warn@depropt{minnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minnames'.
-
-! Undefined control sequence.
-l.130 \blx@kv@defkey
-                    {blx@bbs}{minnames}{\blx@warn@depropt{minnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minnames'.
-
-! Undefined control sequence.
-l.131 \blx@kv@defkey
-                    {blx@bbg}{minnames}{\blx@warn@depropt{minnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minnames'.
-
-! Undefined control sequence.
-l.132 \blx@kv@defkey
-                    {blx@bbc}{minnames}{\blx@warn@depropt{minnames}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minnames'.
-
-! Undefined control sequence.
-l.134 \blx@kv@defkey
-                    {blx@bib}{maxitems}{\blx@warn@depropt{maxitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.134 \blx@kv@defkey{b
-                      lx@bib}{maxitems}{\blx@warn@depropt{maxitems}}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxitems'.
-
-! Undefined control sequence.
-l.135 \blx@kv@defkey
-                    {blx@los}{maxitems}{\blx@warn@depropt{maxitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxitems'.
-
-! Undefined control sequence.
-l.136 \blx@kv@defkey
-                    {blx@bbs}{maxitems}{\blx@warn@depropt{maxitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxitems'.
-
-! Undefined control sequence.
-l.137 \blx@kv@defkey
-                    {blx@bbg}{maxitems}{\blx@warn@depropt{maxitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxitems'.
-
-! Undefined control sequence.
-l.138 \blx@kv@defkey
-                    {blx@bbc}{maxitems}{\blx@warn@depropt{maxitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'maxitems'.
-
-
-Overfull \hbox (78.16736pt too wide) in paragraph at lines 134--139
-[]\OT1/cmr/m/n/12 blx@bibmaxitems blx@losmaxitems blx@bbsmaxitems blx@bbgmaxite
-ms blx@bbcmaxitems 
- []
-
-! Undefined control sequence.
-l.140 \blx@kv@defkey
-                    {blx@bib}{minitems}{\blx@warn@depropt{minitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.140 \blx@kv@defkey{b
-                      lx@bib}{minitems}{\blx@warn@depropt{minitems}}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minitems'.
-
-! Undefined control sequence.
-l.141 \blx@kv@defkey
-                    {blx@los}{minitems}{\blx@warn@depropt{minitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minitems'.
-
-! Undefined control sequence.
-l.142 \blx@kv@defkey
-                    {blx@bbs}{minitems}{\blx@warn@depropt{minitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minitems'.
-
-! Undefined control sequence.
-l.143 \blx@kv@defkey
-                    {blx@bbg}{minitems}{\blx@warn@depropt{minitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minitems'.
-
-! Undefined control sequence.
-l.144 \blx@kv@defkey
-                    {blx@bbc}{minitems}{\blx@warn@depropt{minitems}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package biblatex Warning: Deprecated option.
-(biblatex)                Ignoring 'minitems'.
-
-
-Overfull \hbox (66.74387pt too wide) in paragraph at lines 140--145
-[]\OT1/cmr/m/n/12 blx@bibminitems blx@losminitems blx@bbsminitems blx@bbgminite
-ms blx@bbcminitems 
- []
-
 
 ! Package biblatex Error: Conflicting options.
 
@@ -1682,12 +1356,12 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.165 ...rting' option to '\string\printbiblist'}}
+l.141 ...rting' option to '\string\printbiblist'}}
                                                   
 The option 'sortlos' is already defined.
 
 ! Undefined control sequence.
-l.167 \blx@kv@defkey
+l.143 \blx@kv@defkey
                     {blx@bib1}{sorting}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1702,7 +1376,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 \blx@kv@defkey{b
+l.143 \blx@kv@defkey{b
                       lx@bib1}{sorting}{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1713,7 +1387,7 @@ Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer
 (biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
 ! Undefined control sequence.
-l.172 \blx@kv@defkey
+l.148 \blx@kv@defkey
                     {blx@biblist1}{sorting}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1728,7 +1402,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.172 \blx@kv@defkey{b
+l.148 \blx@kv@defkey{b
                       lx@biblist1}{sorting}{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1739,7 +1413,7 @@ orted.
 (biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
 ! Undefined control sequence.
-l.177 \blx@kv@defkey
+l.153 \blx@kv@defkey
                     {blx@bib2}{prefixnumbers}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1754,7 +1428,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 \blx@kv@defkey{b
+l.153 \blx@kv@defkey{b
                       lx@bib2}{prefixnumbers}{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1771,7 +1445,7 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.187   \blx@autolang@i{#1}}
+l.163   \blx@autolang@i{#1}}
                             
 The option 'babel' is already defined.
 
@@ -1782,7 +1456,7 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.193   \settoggle{blx@skipbiblist}{#1}}
+l.169   \settoggle{blx@skipbiblist}{#1}}
                                         
 The option 'skiplos' is already defined.
 
@@ -1793,12 +1467,12 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198   \settoggle{blx@skipbiblist}{#1}}
+l.174   \settoggle{blx@skipbiblist}{#1}}
                                         
 The option 'skiplos' is already defined.
 
 ! Undefined control sequence.
-l.201 \blx@kv@defkey
+l.177 \blx@kv@defkey
                     {blx@latem@field}{compound}{% deprecated
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1813,7 +1487,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.201 \blx@kv@defkey{b
+l.177 \blx@kv@defkey{b
                       lx@latem@field}{compound}{% deprecated
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1825,7 +1499,7 @@ elalphaNameTemplate'
 (biblatex)                '\DeclareLabelalphaNameTemplate'.
 
 ! Undefined control sequence.
-l.206 \blx@kv@defkey
+l.182 \blx@kv@defkey
                     {blx@latem@field}{pcompound}{% deprecated
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1840,7 +1514,7 @@ belalphaNameTemplate'
 (biblatex)                '\DeclareLabelalphaNameTemplate'.
 
 ! Undefined control sequence.
-l.211 \blx@kv@defkey
+l.187 \blx@kv@defkey
                     {blx@latem@field}{pstrwidth}{% deprecated
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1855,7 +1529,7 @@ belalphaNameTemplate'
 (biblatex)                '\DeclareLabelalphaNameTemplate'.
 
 
-Overfull \hbox (31.75534pt too wide) in paragraph at lines 201--216
+Overfull \hbox (31.75534pt too wide) in paragraph at lines 177--192
 []\OT1/cmr/m/n/12 blx@latem@fieldcompound blx@latem@fieldpcompound blx@latem@fi
 eldpstrwidth 
  []
@@ -1867,12 +1541,12 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.229   \settoggle{abx@bool@giveninits}{#1}}
+l.205   \settoggle{abx@bool@giveninits}{#1}}
                                             
 The option 'firstinits' is already defined.
 
 ! Undefined control sequence.
-l.243 \blx@kv@defkey
+l.219 \blx@kv@defkey
                     {blx@refcontext}{prefixnumbers}{%LEGACY(<3.3)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1887,7 +1561,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.243 \blx@kv@defkey{b
+l.219 \blx@kv@defkey{b
                       lx@refcontext}{prefixnumbers}{%LEGACY(<3.3)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1898,7 +1572,7 @@ amed.
 (biblatex)                Please use 'labelprefix' option instead.
 
 ! Undefined control sequence.
-l.247   \blx@kv@setkeys
+l.223   \blx@kv@setkeys
                        {blx@refcontext}{labelprefix=#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1907,7 +1581,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.247 ...@kv@setkeys{blx@refcontext}{labelprefix=#
+l.223 ...@kv@setkeys{blx@refcontext}{labelprefix=#
                                                   1}}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1915,7 +1589,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.250 \blx@kv@defkey
+l.226 \blx@kv@defkey
                     {blx@bib1}{prefixnumbers}{}%LEGACY(<3.4) legacy name for...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1930,14 +1604,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.250 \blx@kv@defkey{b
+l.226 \blx@kv@defkey{b
                       lx@bib1}{prefixnumbers}{}%LEGACY(<3.4) legacy name for...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.251 \DeprecateFieldWithReplacement
+l.227 \DeprecateFieldWithReplacement
                                     {prefixnumber}{labelprefix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1952,7 +1626,7 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.259 ...lx@kv@setkeys{blx@opt@pre}{labeldate=#1}}
+l.235 ...lx@kv@setkeys{blx@opt@pre}{labeldate=#1}}
                                                   
 The option 'datelabel' is already defined.
 
@@ -1963,7 +1637,7 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.265   \settoggle{blx@labeldateparts}{#1}}
+l.241   \settoggle{blx@labeldateparts}{#1}}
                                            
 The option 'labelyear' is already defined.
 
@@ -1974,12 +1648,12 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.270   \settoggle{blx@labeldateparts}{#1}}
+l.246   \settoggle{blx@labeldateparts}{#1}}
                                            
 The option 'labelyear' is already defined.
 
 ! Undefined control sequence.
-l.310 \blx@kv@defkey
+l.286 \blx@kv@defkey
                     {blx@refcontext}{sortingnamekeyscheme}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1994,7 +1668,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.310 \blx@kv@defkey{b
+l.286 \blx@kv@defkey{b
                       lx@refcontext}{sortingnamekeyscheme}{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2007,14 +1681,14 @@ Package biblatex Warning: 'sortingnamekeyscheme' is deprecated.
 atename.
 <to be read again> 
                    1
-l.313 ...@refcontext@sortingnamekeytemplatename{#1
+l.289 ...@refcontext@sortingnamekeytemplatename{#1
                                                   }}
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 ! Undefined control sequence.
-l.315 \blx@kv@defkey
+l.291 \blx@kv@defkey
                     {blx@assignrefcontext}{sortingnamekeyscheme}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2029,7 +1703,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.315 \blx@kv@defkey{b
+l.291 \blx@kv@defkey{b
                       lx@assignrefcontext}{sortingnamekeyscheme}{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2041,14 +1715,14 @@ Package biblatex Warning: 'sortingnamekeyscheme' is deprecated.
 ! Illegal parameter number in definition of \blx@tempb.
 <to be read again> 
                    1
-l.318   \def\blx@tempb{#1
+l.294   \def\blx@tempb{#1
                          }}
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 ! Undefined control sequence.
-l.338 \DeprecateFieldWithReplacement
+l.314 \DeprecateFieldWithReplacement
                                     {extrayear}{extradate}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2063,13 +1737,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.338 \DeprecateFieldWithReplacement{e
+l.314 \DeprecateFieldWithReplacement{e
                                       xtrayear}{extradate}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.370 \abx@dodatetypes
+l.346 \abx@dodatetypes
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2597,7 +2271,7 @@ Chapter 4.
 [19
 
 ]
-<screenshot006.png, id=532, 366.61969pt x 507.39563pt>
+<screenshot006.png, id=507, 366.61969pt x 507.39563pt>
 File: screenshot006.png Graphic file (type png)
 <use screenshot006.png>
 Package pdftex.def Info: screenshot006.png  used on input line 52.
@@ -2609,7 +2283,7 @@ Package pdftex.def Info: screenshot006.png  used on input line 52.
 [21]
 
 [22]
-<screenshot005.png, id=559, 1028.34187pt x 538.26094pt>
+<screenshot005.png, id=529, 1028.34187pt x 538.26094pt>
 File: screenshot005.png Graphic file (type png)
 <use screenshot005.png>
 Package pdftex.def Info: screenshot005.png  used on input line 155.
@@ -2660,18 +2334,8 @@ Appendix A.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 73E12B2A10A42C597E9A2E202200C65B;8970
-(rerunfilecheck)             After:  71646CFFB7A1D79476E7D6C960EBB4F0;8968.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 71646CFFB7A1D79476E7D6C960EBB4F0;8968.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
@@ -2682,194 +2346,35 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 ### bottom level
 (\end occurred when \iftrue on line 34 was incomplete) 
 Here is how much of TeX's memory you used:
- 34457 strings out of 469941
- 644096 string characters out of 5468947
- 1271786 words of memory out of 5000000
- 60419 multiletter control sequences out of 15000+600000
+ 34416 strings out of 469941
+ 643611 string characters out of 5468947
+ 1272486 words of memory out of 5000000
+ 60418 multiletter control sequences out of 15000+600000
  672379 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,105p,2225b,4864s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{equation.88} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.103} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.99} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.96} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.92} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.72} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.104} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.93} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.114} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.113} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{dummy.111} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.110} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.109} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.106} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.101} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.100} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.94} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.91} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.90} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.89} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.87} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.82} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.81} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.79} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.78} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.74} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.70} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.39} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.36} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.35} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.34} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.32} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.31} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.25} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.24} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.23} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.22} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.18} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{dummy.17} has been referenced but does not exist, r
-eplaced by a fixed one
-
-
-pdfTeX warning (dest): name{dummy.14} has been referenced but does not exist, r
-eplaced by a fixed one
-
-<C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mbsy10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmex10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/KENNIX/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/KENNIX/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><C:/Users/KE
-NNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmtt12.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/symbol/usyr.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/symbol/usyr.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/times/utmb8a.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts
-/type1/urw/times/utmr8a.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/font
-s/type1/urw/times/utmr8a.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fon
-ts/type1/urw/times/utmri8a.pfb>
-Output written on Thesis.pdf (43 pages, 363758 bytes).
+<C:/Users/KENNIX/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/KENN
+IX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
+Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmib10.pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cmextra/cmmib9.pfb><C:/Users/KENNIX/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/KENNIX/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/KENNIX/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
+/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb
+><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb
+><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb
+><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pf
+b><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.p
+fb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.
+pfb><C:/Users/KENNIX/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on Thesis.pdf (43 pages, 359837 bytes).
 PDF statistics:
- 723 PDF objects out of 1000 (max. 8388607)
- 207 named destinations out of 1000 (max. 500000)
+ 675 PDF objects out of 1000 (max. 8388607)
+ 167 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 
