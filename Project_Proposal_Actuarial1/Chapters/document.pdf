@@ -1,0 +1,74 @@
+\documentclass{article}
+
+
+\begin{document}
+	\title{FTSA CURRENCY MARKET DATA}
+	\author{Kennedy Mwangi:S030-01-1572/2019 Cynthia Chepkirui:S030-01-1609/2019}
+	
+	\maketitle
+	
+	%read the data from csv files
+	EURCHF.Data=read.csv("EUR.CHF Historical Data.csv")
+	USDJPY.Data= read.csv("USD.JPY Historical Data.csv")
+	DXY.Data= read.csv("DXY.data.csv")
+	USDCHF.Data= read.csv("USD.CHF Historical Data.csv")	
+	%#Extract the date
+	
+	date=USDJPY.Data$Date
+	
+	%#Extract the price colums for each dataset
+	
+	EURCHF=EURCHF.Data$Price
+	USDJPY=USDJPY.Data[Price]
+	DXY=DXY.Data$Price
+	USDCHF=USDCHF.Data$Price	
+	%#Make a dataframe
+	
+	dataframe=data.frame(date,EURCHF,USDJPY,DXY,USDCHF)
+	
+	%#Do the summary
+	
+	summary(dataframe)
+	ggplot(data=dataframe,aes(x=date, y=prices))+
+	geom_point()
+	options(
+	digits=2,
+	scripen=100
+	)
+	returns=BatchGetSymbols::BatchGetSymbols(
+	tickers=c("EURCHF=X","USDJPY=X","DX=F","USDCHF=X"),
+	first.date=Sys.Date()-2920
+	)
+	head(returns)
+	tail(returns)
+	M=returns$df.tickers[,c("ticker","ref.date","price.close")]
+	list_M=split(
+	x=M,
+	f=M$ticker
+	)
+	for(j in names(list_M)) list_M[[j]]$return.close=as.vector(quantmod::Delt(
+	x1=list_M[[j]]$price.close
+	))
+	for(j in names(list_M)) list_M[[j]]= list_M[[j]][
+	list_M[[j]]$ref.date >=Sys.Date() -2920,
+	]
+	M=dplyr::bind_rows(
+	list_M
+	)
+	M=tidyr::gather(
+	data=M,
+	key="close",
+	value="price",
+	price.close,return.close
+	)
+	ggplot(M)+
+	aes(x=ref.date, y=price, color=ticker)+
+	geom_line()+
+	facet_grid(close~ticker,scales="free")+
+	labs(
+	title="MARKET PRICES"
+	)+
+	theme(legend.position="top",axis.text.x=element_text(angle=45,vjust=1,hjust=1))
+	returns	
+	@
+\end{document}

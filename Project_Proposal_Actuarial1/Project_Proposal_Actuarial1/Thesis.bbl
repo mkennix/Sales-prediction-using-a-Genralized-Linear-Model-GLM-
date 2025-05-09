@@ -1,0 +1,62 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Rigaill2010}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rigaill}{R.}%
+     {Guillem}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RG1}
+  \strng{fullhash}{RG1}
+  \field{labelyear}{2010}
+  \field{sortinit}{R}
+  \field{abstract}{%
+  A common computational problem in multiple change-point models is to recover
+  the segmentations with {\$}1{\$} to {\$}K{\_}{\{}max{\}}{\$} change-points of
+  minimal cost with respect to some loss function. Here we present an algorithm
+  to prune the set of candidate change-points which is based on a functional
+  representation of the cost of segmentations. We study the worst case
+  complexity of the algorithm when there is a unidimensional parameter per
+  segment and demonstrate that it is at worst equivalent to the complexity of
+  the segment neighbourhood algorithm:
+  {\$}\backslashmathcal{\{}O{\}}(K{\_}{\{}max{\}} n{\^{}}2){\$}. For a
+  particular loss function we demonstrate that pruning is on average efficient
+  even if there are no change-points in the signal. Finally, we empirically
+  study the performance of the algorithm in the case of the quadratic loss and
+  show that it is faster than the segment neighbourhood algorithm.%
+  }
+  \verb{eprint}
+  \verb 1004.0887
+  \endverb
+  \field{title}{{A pruned dynamic programming algorithm to recover the best
+  segmentations with {\$}1{\$} to {\$}K{\_}{\{}max{\}}{\$} change-points}}
+  \verb{url}
+  \verb http://arxiv.org/abs/1004.0887
+  \endverb
+  \field{eprinttype}{arXiv}
+  \field{year}{2010}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

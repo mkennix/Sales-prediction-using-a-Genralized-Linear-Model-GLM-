@@ -1,0 +1,166 @@
+\titleformat{\chapter}[hang]
+{\filleft\huge} {} {0ex} {\bfseries}%\MakeUppercase
+\titlespacing*{\chapter}
+{0pt} {-50pt} {5pt}
+\chapter{Appendix} 
+\label{Appendix}
+%\lhead{Appendix: \emph{Proposed Budget}}
+%\section{Proposed Budget}
+%\begin{table}[H]
+%	\centering
+%	\begin{tabular}{|l|l|}
+%		\hline
+%		\textbf{RESOURCE} & \textbf{COST} \\ \hline
+%		Internet          & 3000          \\ \hline
+%		Printing          & 5000          \\ \hline
+%		Grand Totals      & 8000          \\ \hline
+%	\end{tabular}
+%\end{table}
+%\newpage
+%\lhead{Appendix: \emph{Project Work Plan}}
+%\section{Project Work Plan}
+%	\begin{ganttchart}[
+%	today=22,
+%	today rule/.style= {blue, thick},
+%	x unit=0.39cm,
+%	y unit title=01cm,
+%	y unit chart=0.8cm,
+%	title label font=\normalsize,
+%	bar label font=\normalsize,
+%	group label font=\normalsize\bfseries,
+%	milestone label font=\normalsize\itshape,
+%	vgrid={*{3}{gray!60, dashed}, *1{black}},  hgrid]  {1}{32}
+%	\gantttitle{Jan}{4}
+%	\gantttitle{Feb}{4}
+%	\gantttitle{Mar}{4}		
+%	\gantttitle{Apr}{4}
+%	\gantttitle{May}{4}
+%	\gantttitle{Jun}{4}				
+%	\gantttitle{Jul}{4}
+%	\gantttitle{Aug}{4}\\
+	
+%	\ganttbar[bar/.append style={fill=blue!10}]{Concept Writing}{1}{4} \\
+	
+%	\ganttbar[bar/.append style={fill=blue!10}]{Literature Review}{8}{12} \\
+%	\ganttbar[bar/.append style={fill=blue!10}]{Methodology}{12}{20} \\
+	
+%	\ganttmilestone{Proposal Presentation}{22.5}\\
+	
+%	\ganttbar[bar/.append style={fill=blue!40}]{Writing R Codes}{22}{23} \\
+%	\ganttbar[bar/.append style={fill=blue!40}]{Testing R codes}{23}{24}\\
+%	\ganttbar[bar/.append style={fill=blue!40}]{Results}{24}{25}\\
+%	\ganttbar[bar/.append style={fill=blue!40}]{Discussion}{25}{26} \\			
+%	\ganttbar[bar/.append style={fill=blue!40}]{Conclusion}{26}{27} \\
+	
+%	\ganttmilestone{Project Presentation}{28}
+	
+%	\ganttlink{elem0}{elem1}
+%	\ganttlink{elem1}{elem2}
+%	\ganttlink{elem2}{elem3}
+%	\ganttlink{elem3}{elem4}
+%	\ganttlink{elem4}{elem5}
+%	\ganttlink{elem5}{elem6}
+%	\ganttlink{elem6}{elem7}
+%	\ganttlink{elem7}{elem8}
+%	\ganttlink{elem8}{elem9}
+%	\ganttlink{elem9}{elem10}
+%	\ganttlink{elem10}{elem11}
+%\end{ganttchart}
+
+
+\lhead{Appendix. \emph{R Codes}}
+\section{R Codes}
+\begin{verbatim}
+library(dplyr)
+library(ggplot2)
+library(GGally)
+library(ROCR)
+library(readr)
+library(mlbench)
+library(gamlss)
+library(magrittr)
+library(moments)
+library(fpp)
+supermarket_sales1=read_csv("C:/Users/mkene/Downloads/New folder/
+                    supermarket_sales male change.csv")
+#CHECKING FOR CONTINUOUS VARIABLES
+continuous <-select_if(supermarket_sales1, is.numeric)
+summary(continuous)
+summary(supermarket_sales1)
+table(supermarket_sales$Gender)
+n <- nrow(supermarket_sales)  # Number of students
+(percent_gender <- table(supermarket_sales$Gender)/n * 100)
+barplot(percent_gender,ylim=c(0,70), ylab="percent",main="Barplot of Gender")
+skewness(supermarket_sales$Quantity)
+##
+Xg=supermarket_sales1$Gender
+X1=factor(Xg)
+X2=supermarket_sales1$`Unit price`
+X3=supermarket_sales1$Quantity
+X4=supermarket_sales1$`Tax 5%`
+X5=supermarket_sales1$Rating
+X6=supermarket_sales1$`gross income`
+#Extracting the needed columns
+data=data.frame(unitprice=X2,quantity=X3,tax=X4,rating=X5,gender=X1)
+##Training/test sets
+set.seed(100)
+create_train_test <- function(data, size = 0.8, train = TRUE) {
+	n_row = nrow(data)
+	total_row = size * n_row
+	train_sample <- 1: total_row
+	if (train == TRUE) {
+		return (data[train_sample, ])
+	} else {
+		return (data[-train_sample, ])
+	}
+}
+data_train <- create_train_test(data, 0.8, train = TRUE)
+data_test <- create_train_test(data, 0.8, train = FALSE)
+summary(data_train)
+#Total sales training and testing
+V=supermarket_sales1$Total
+Y=data.frame(Sales=V)
+sales_create_test <- function(Y, size = 0.8, train = TRUE) {
+	n_row = nrow(Y)
+	total_row = size * n_row
+	train_sample <- 1: total_row
+	if (train == TRUE) {
+		return (Y[train_sample, ])
+	} else {
+		return (Y[-train_sample, ])}}
+sales_train <- sales_create_test(Y, 0.8, train = TRUE)
+sales_test <- sales_create_test(Y, 0.8, train = FALSE)
+##Building the model
+formula=sales_train~.
+# Gamma model
+model_gamma=glm(formula, data=data_train, family=Gamma(link="log"))
+summary(model_gamma)
+# Inverse Gaussian model
+model_inverse.gaussian=glm(formula, data=data_train,
+                       family=inverse.gaussian(link = "inverse"))
+summary(model_inverse.gaussian)
+# Gaussian model
+model_gaussian=glm(formula, data=data_train, 
+               family=gaussian(link = "inverse"))
+summary(model_gaussian)
+##Chi-square Test
+chisq.test(sales_train, correct=FALSE)
+pchisq(149019,df=799,lower.tail = FALSE)
+#Forecasting the sales
+newdata= data.frame(data_test)
+predOut=predict(model_gamma, newdata, se.fit = FALSE, scale = NULL, df = Inf,
+interval =  "prediction",
+level = 0.95, type = "response")
+View(predOut)
+#MSE of the forecast
+actpred=data.frame(pred=predOut, actual=sales_test)
+MSE=mean((actpred$actual-actpred$pred)^2)
+accuracy(actpred$pred,actpred$actual)
+mean(model_gamma$residuals^2)
+##Ploting actual vs predicted sales
+plot(actpred$actual,type = "l",lty= 1,
+          main="ACTUAL VS PREDICTED SALES",col = "red",xlim=c(0,70))
+lines(predOut, type = "l", lty=2, col = "blue",xlim=c(0,70), axes=F)
+legend("topleft", legend=c("ACTUAL", "PREDICTION"),
+col=c("red", "blue"), lty=1:2, cex=0.8)
+\end{verbatim}

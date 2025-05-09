@@ -1,0 +1,175 @@
+\documentclass[12pt,a4paper,oneside]{Thesis}
+\usepackage{imakeidx,epigraph}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{graphics}
+\usepackage{booktabs}
+\usepackage{amsmath,bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeindex[columns=1, title=Index]
+\usepackage[english]{babel}
+\usepackage{verbatim,commath,tabularx,enumitem,float,csquotes,mathptmx,multirow,pgfgantt,lscape,subfigure}
+\usepackage[maxbibnames=10,maxcitenames=1,giveninits=false,bibencoding=ascii,defernumbers=true,bibstyle=authoryear,citestyle=authoryear,natbib=true,backend=bibtex]{biblatex}
+
+\bibliography{references.bib}
+\overfullrule=2cm
+\graphicspath{{Figures/}} 
+\numberwithin{equation}{section}
+\hypersetup{urlcolor=black, colorlinks=true} 
+\title{\ttitle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}[display]{\filleft\huge}{\chaptername\ \thechapter} {0ex} {\bfseries}%\MakeUppercase
+\titlespacing*{\chapter}{0pt} {-50pt} {5pt}
+%\titleformat{ %\chapter}[hang]{\huge\bfseries}{\thechapter.}{2pc}{}
+%\titlespacing\chapter{0pt}{2pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\section{0pt}{-5pt plus 2pt minus 2pt}{-10pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{-5pt plus 2pt minus 2pt}{-10pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{-5pt plus 2pt minus 2pt}{-10pt plus 2pt minus 2pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\sloppy
+\frontmatter 
+\setstretch{1.25} 
+\fancyhead{} 
+\rhead{\thepage} 
+\lhead{}
+\pagestyle{fancy} 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornamea}
+\hypersetup{pdfauthor=\authornameb}
+\hypersetup{pdfkeywords=\keywordnames}
+%\begin{comment}
+
+\begin{titlepage}
+		\let\origbaselineskip\baselineskip
+		\begin{center} 	\hfill \\[0.5cm] 
+			\setlength{\baselineskip}{2\origbaselineskip}
+			{ \Huge \bfseries \ttitle }\\[3cm] 	
+			{\Large \href{\authornameamail}{\authornamea}\\and\\	
+				\href{\authornamebmail}{\authornameb}\\[2cm]
+				\emph{A Project submitted in partial fulfilment of the requirements for the award of the Degree of} \\[1cm]
+				\textbf{{\degreename} \\in\\ {\subjectname}} \\[3cm]		
+				{\univname}
+				\vfill {2022} }
+		\end{center}
+		\clearpage
+		\setcounter{page}{-0}
+	\end{titlepage}
+
+\cleardoublepage 
+\Declaration{
+\enquote{We, \textsl{\authornamea} and \textsl{\authornameb}, declare that this project entitled, \textsl{\lq\ttitle\rq} submitted in partial fulfilment of the degree of \textsl{{ \degreename} in {\subjectname}}, is a record of original work carried out by us under the guidance of \textsl{\supname}, and has not formed a basis for the award of any other degree or diploma, in this or any other Institution or University. In line with the ethical practice in reporting scientific information, due acknowledgements have been made wherever the findings of others have been cited.}\\* [1.5cm]
+\noindent \namesigdate[7cm]{\centering \textsc{\authornamea} \\* {\textsl{(\authornameareg)}}} \hfill
+\namesigdate{\centering \textsc{\authornameb} \\* {\textsl{(\authornamebreg)}}}
+}      
+
+\clearpage 
+\Certificate{
+This is to certify that the project entitled \textsl{\lq\ttitle\rq} submitted by \textsl{\authornamea} and \textsl{\authornameb} to the \univname, in partial fulfilment for the  award  of the degree of \textsl{{\degreename} in {\subjectname}}, is a bona-fide record of research work carried out by them under my supervision. The contents of this project, in full or in parts, have not been submitted to any other Institution or University for the award of any degree.\\* [1.5cm]
+\noindent \namesigdate{\centering \textsc{\supname} \\* {\emph{(Supervisor)}}} \hfill
+\namesigdate{\centering \textsc{Dr. Maina Mundia} \\* {\emph{(Project Coordinator)}}}
+}      
+                                                           
+\cleardoublepage 
+\setstretch{1.25}                                                       
+\acknowledgement{
+We would like to express our sincere gratitude to our supervisor, {\textit{\supname}} for his excellent guidance during the times of doing the Project through helping us in doing and producing a good document. We would also like to appreciate the help of the lecturers from the department for helping out during the whole process of producing this work.
+}
+
+\cleardoublepage
+\setstretch{1.25} 
+\pagestyle{empty} 
+\dedicatory{Dedicated to our family, friends, lecturers and classmates who have really helped us out during the preparation of this project document.} 
+\addtocontents{toc}
+
+\clearpage 
+\pagestyle{fancy} 
+\lhead{\emph{Contents}} 
+\tableofcontents 
+\lhead{\emph{List of Figures}} 
+\listoffigures 
+\lhead{\emph{List of Tables}}
+\listoftables 
+
+\clearpage
+\setstretch{1.5} 
+\lhead{\emph{Abbreviations}} 
+\listofsymbols{ll} 
+{
+	\textbf{AIC}& \textbf{A}kaike \textbf{I}nformation \textbf{C}riterion\\
+	\textbf{AUC}&  \textbf{A}rea \textbf{U}nder the \textbf{C}urve\\
+	\textbf{GLM}& \textbf{G}eneralized \textbf{L}inear \textbf{M}odel\\
+	\textbf{MLE}& \textbf{M}aximum \textbf{L}ikelihood \textbf{E}stimator\\
+	\textbf{MSE}&   \textbf{M}ean \textbf{S}quare \textbf{E}rror\\
+	\textbf{OLS}& \textbf{O}rdinary      \textbf{L}inear    \textbf{S}quares\\
+	\textbf{pdf}& \textbf{p}robability \textbf{d}ensity  \textbf{f}unction\\
+	\textbf{RMSE}& \textbf{R}oot \textbf{M}ean \textbf{S}quare \textbf{E}rror\\
+	\textbf{ROC}& \textbf{R}eceiver \textbf{O}perating \textbf{C}haracteristic curve\\
+	\textbf{se}&  \textbf{s}tandard \textbf{e}rror\\
+    \textbf{VAR}& \textbf{V}ector  \textbf{A}utoregressive\\
+}
+
+\clearpage 
+\lhead{\emph{Symbols}} 
+\listofnomenclature{lll} 
+{
+
+    \bm{$\alpha$}& Level of significance\\
+	\bm{$\eta$}& Linear predictor\\
+	\bm{$\phi$}& Dispersion parameter\\
+	\bm{$\chi^{2}$}&       Chi square\\
+	\bm{$\hat{\beta}$}&     Estimated parameters\\
+	\bm{$g$($\mu$)}& Link function\\
+	\bm{$\hat{v}$($\mu$)}& Variance function\\
+	\bm{$\theta_i$}& Canonical Parameter\\
+	\bm{$H_{0}$}& Null hypothesis\\
+	\bm{$H_{1}$}& Alternative hypothesis\\
+	\bm{$\sum$}& Summation\\
+	\bm{$\epsilon$}& Error term\\
+	\bm{$L$}& Likelihood\\
+	\bm{$Y$}& Dependent variable\\
+	\bm{$X$}& Explanatory variable\\
+	\bm{$\infty$}& Optimal range\\
+}
+%\end{comment}
+\clearpage 
+\abstract{It’s vital for commercial enterprises to accurately forecast sales. Such predictive analytics is a crucial part of their decision support systems to increase the profitability of the company. In predictive data analytics, the branch of regression modeling is used to forecast numerical response variable like sales amount. In this category, linear models are simple and easy to interpret yet they permit generalization to very powerful and flexible families of models which are called Generalized linear models. The generalization potential oversimple linear regression can be explained. Generalized Linear Models relax the assumption of normally distributed error terms. Moreover, the relationship of the set of predictor variables and the response variable could be represented by a set of link functions rather than the sole choice of the identity function. The main objective of this study was to model sales amount forecast problem through the use of Generalized Linear Models. Company sales data are explored and the response variable, sales amount is fitted to the Gamma, Gaussian and Inverse Gaussian from the exponential family of distributions. The model selection was done using Akaike Information Criterion. The results showed that the Gamma distribution had the least Akaike Information Criterion hence was chosen. The model adequacy was assessed using the Chi-square goodness of fit at 5\% significance level which  led to the rejection of the null hypothesis that the model did not fit the data. This proved that the model was adequate enough to fit the data. The fitted Gamma model was then used to forecast the sales and the accuracy of the forecasted sales was checked using the mean square error and a value of 0.06 was obtained implying that the forecast did not disperse far from the observed values. In conclusion, the results showed that Generalized Linear model is reliable in sales forecasting and categorization of the predictor variables improve the model fitting results. 
+%Forecasting sales is important in helping the businesses to run their day to day activities. It enables them to make good plans so as to remain afloat by knowing the future outcomes of the sales. The aim of this study was to forecast sales using data provided from various supermarkets. Sales forecasts have been challenging in most managements such that there is a problem of combining objective statistical analysis with subjective judgement in making these forecasts which has resulted in poor forecast results not reliable to the end user of those sales forecast figures. The general objective of this study was to forecast supermarket sales using the generalized linear models. Generalized linear models relaxes the assumption of normally distributed error terms and  hence the error terms can follow any other distribution. Since sales amount is non-negative, the random component from the generalized linear models will be the distributions from the the exponential family. It included; the Gamma distribution, the Gaussian distribution and the Inverse Gaussian distribution. Akaike Information Criterion was used to choose the best model to be used. Gamma distribution had the least AIC hence was then used in prediction. Model  adequacy was assessed  using the Chi-square goodness of fit at 5\% significance level and from the outcome the null hypothesis was rejected implying the model was a good fit to the data. In checking the accuracy of the predictions, MSE of 0.06 was obtained implying that the predictions did not disperse far from the observed values. The data used was obtained from the Kaggle website $https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales$. The dataset consisted of 1000 observations which include 10 variables: customer type; either a member or normal, the gender; male or female, the unit price of the goods purchased, the quantity, tax at 5\%, the total amount of the purchased items, cost of goods sold, gross margin, gross income and the rating that was provided by the serviced customer. In conclusion generalized linear model proved to be reliable  model in sales forecasting as it gave predicted sales values which are a reflection of the observed values. 
+}
+\mainmatter 
+\pagestyle{fancy}
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+\input{Chapters/Chapter5}
+
+\label{References}
+\lhead{\emph{References}} 
+\References
+\printbibliography[title={References}]
+Hothorn, T., Hornik, K., Zeileis, A. 2006. Unbiased Recursive Partitioning: A Conditional Inference
+Framework. Journal of Computational and Graphical Statistics, 15(3), 651-674.\\
+P. Jong, G. Z. Heller, “Generalized Linear Models for Insurance 
+Data,” International Series on Actuarial Science, Cambridge 
+University Press, 2008. \\
+Razzaghi, M. 2013. The Probit Link Function in
+Generalized Linear Models for Data Mining Applications. Journal of Modern Applied Statistical Methods, 12(19), 164-169.\\
+Wamwea, Charity Mkajuma, Benjamin Kyalo Muema, Joseph Kyalo Mung’atu, et al. (2019). “Modelling a pay-as-you-drive insurance pricing structure using a generalized linear model: Case study
+of a company in Kiambu”. In: American Journal of Theoretical and Applied Statistics 4.6, pp. 527–
+533.\\
+Friedman, J., Hastie, T., Tibshirani, R. 2010. Regularization Paths for Generalized Linear Models via Coordinate Descent. Journal of Statistical Software, Articles, 33(1), 1-22.\\
+
+\appendix
+\input{Appendices/Appendix}
+\backmatter
+\end{document} 
+

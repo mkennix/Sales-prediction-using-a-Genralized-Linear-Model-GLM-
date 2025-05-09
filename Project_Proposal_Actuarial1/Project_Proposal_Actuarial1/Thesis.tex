@@ -1,0 +1,137 @@
+\documentclass[12pt,a4paper,twoside]{Thesis}
+\usepackage{imakeidx,epigraph}
+\usepackage{titlesec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeindex[columns=1, title=Index]
+\usepackage[english]{babel}
+\usepackage{verbatim,commath,tabularx,enumitem,float,csquotes,mathptmx,multirow,pgfgantt,lscape,subfigure}
+\usepackage[maxbibnames=10,maxcitenames=1,giveninits=false,bibencoding=ascii,defernumbers=true,bibstyle=authoryear,citestyle=authoryear,natbib=true,backend=bibtex]{biblatex}
+
+\bibliography{library.bib}
+\overfullrule=2cm
+\graphicspath{{Figures/}} 
+\numberwithin{equation}{section}
+\hypersetup{urlcolor=black, colorlinks=true} 
+\title{\ttitle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}[display]{\filleft\huge}{\chaptername\ \thechapter} {0ex} {\bfseries}%\MakeUppercase
+\titlespacing*{\chapter}{0pt} {-50pt} {5pt}
+%\titleformat{ %\chapter}[hang]{\huge\bfseries}{\thechapter.}{2pc}{}
+%\titlespacing\chapter{0pt}{2pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\section{0pt}{-5pt plus 2pt minus 2pt}{-10pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{-5pt plus 2pt minus 2pt}{-10pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{-5pt plus 2pt minus 2pt}{-10pt plus 2pt minus 2pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\sloppy
+\frontmatter 
+\setstretch{1.25} 
+\fancyhead{} 
+\rhead{\thepage} 
+\lhead{}
+\pagestyle{fancy} 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornamea}
+\hypersetup{pdfauthor=\authornameb}
+\hypersetup{pdfkeywords=\keywordnames}
+%\begin{comment}
+
+\begin{titlepage}
+		\let\origbaselineskip\baselineskip
+		\begin{center} 	\hfill \\[0.5cm] 
+			\setlength{\baselineskip}{2\origbaselineskip}
+			{ \Huge \bfseries \ttitle }\\[3cm] 	
+			{\Large \href{\authornameamail}{\authornamea}\\and\\	
+				\href{\authornamebmail}{\authornameb}\\[2cm]
+				\emph{A Project submitted in partial fulfilment of the requirements for the award of the Degree of} \\[1cm]
+				\textbf{{\degreename} \\in\\ {\subjectname}} \\[3cm]		
+				{\univname}
+				\vfill {2021} }
+		\end{center}
+		\clearpage
+		\setcounter{page}{-0}
+	\end{titlepage}
+
+\cleardoublepage 
+\Declaration{
+\enquote{We, \textsl{\authornamea} and \textsl{\authornameb}, declare that this project proposal entitled, \textsl{\lq\ttitle\rq} submitted in partial fulfilment of the degree of \textsl{{ \degreename} in {\subjectname}}, is a record of original work carried out by us under the guidance of \textsl{\supname}, and has not formed a basis for the award of any other degree or diploma, in this or any other Institution or University. In line with the ethical practice in reporting scientific information, due acknowledgements have been made wherever the findings of others have been cited.}\\* [1.5cm]
+\noindent \namesigdate[7cm]{\centering \textsc{\authornamea} \\* {\textsl{(\authornameareg)}}} \hfill
+\namesigdate{\centering \textsc{\authornameb} \\* {\textsl{(\authornamebreg)}}}
+}      
+
+\clearpage 
+\Certificate{
+This is to certify that the project proposal entitled \textsl{\lq\ttitle\rq} submitted by \textsl{\authornamea} and \textsl{\authornameb} to the \univname, in partial fulfilment for the  award  of the degree of \textsl{{\degreename} in {\subjectname}}, is a bona-fide record of research work carried out by them under my supervision. The contents of this project proposal, in full or in parts, have not been submitted to any other Institution or University for the award of any degree.\\* [1.5cm]
+\noindent \namesigdate{\centering \textsc{\supname} \\* {\emph{(Supervisor)}}} \hfill
+\namesigdate{\centering \textsc{Project Coordinator} \\* {\emph{(Project Coordinator)}}}
+
+}      
+%                                                           
+%\cleardoublepage 
+%\setstretch{1.25}                                                       
+%\acknowledgement{
+%I would like to express my sincere gratitude to my supervisor, {\textit{\supname}} for her excellent guidance....
+%}
+%
+\cleardoublepage
+\setstretch{1.3} 
+\pagestyle{empty} 
+\dedicatory{Dedicated to ....} 
+\addtocontents{toc}
+
+\clearpage 
+\pagestyle{fancy} 
+\lhead{\emph{Contents}} 
+\tableofcontents 
+\lhead{\emph{List of Figures}} 
+\listoffigures 
+\lhead{\emph{List of Tables}}
+\listoftables 
+
+\clearpage
+\setstretch{1.5} 
+\lhead{\emph{Abbreviations}} 
+\listofsymbols{ll} 
+{
+ \textbf{AR}& \textbf{A}uto \textbf{R}egression\\
+}
+
+\clearpage 
+\lhead{\emph{Symbols}} 
+\listofnomenclature{lll} 
+{
+	$a$ & distance & m \\
+	% Symbol & Name & Unit \\
+}
+%\end{comment}
+\clearpage 
+\abstract{
+	Abstract here.....
+}
+\mainmatter 
+\pagestyle{fancy}
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+\input{Chapters/Chapter5}
+
+\label{References}
+\lhead{\emph{References}} 
+\References
+\printbibliography[title={References}]
+
+
+\appendix
+\input{Appendices/Appendix}
+\backmatter
+\end{document} 
+

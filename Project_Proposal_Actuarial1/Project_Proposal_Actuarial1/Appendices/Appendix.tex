@@ -1,0 +1,67 @@
+\titleformat{\chapter}[hang]
+{\filleft\huge} {} {0ex} {\bfseries}%\MakeUppercase
+\titlespacing*{\chapter}
+{0pt} {-50pt} {5pt}
+\chapter{Appendix} 
+\label{Appendix}
+\lhead{Appendix: \emph{Proposed Budget}}
+\section{Proposed Budget}
+
+
+\newpage
+\lhead{Appendix: \emph{Project Work Plan}}
+\section{Project Work Plan}
+	\begin{ganttchart}[
+	today=15,
+	today rule/.style= {blue, thick},
+	x unit=0.39cm,
+	y unit title=01cm,
+	y unit chart=0.8cm,
+	title label font=\normalsize,
+	bar label font=\normalsize,
+	group label font=\normalsize\bfseries,
+	milestone label font=\normalsize\itshape,
+	vgrid={*{3}{gray!60, dashed}, *1{black}},  hgrid]  {1}{32}
+	\gantttitle{2020}{32} \\		
+	\gantttitle{May}{4}
+	\gantttitle{Jun}{4}
+	\gantttitle{Jul}{4}
+	\gantttitle{Aug}{4}
+	\gantttitle{Sep}{4}				
+	\gantttitle{Oct}{4}
+	\gantttitle{Nov}{4}
+	\gantttitle{Dec}{4} \\
+	
+	\ganttbar[bar/.append style={fill=blue!10}]{Concept Writing}{1}{4} \\
+	\ganttmilestone{Concept Presentation}{5}\\
+	
+	\ganttbar[bar/.append style={fill=blue!10}]{Introduction}{4}{8} \\
+	\ganttbar[bar/.append style={fill=blue!10}]{Literature Review}{8}{12} \\
+	\ganttbar[bar/.append style={fill=blue!10}]{Methodology}{12}{18} \\
+	
+	\ganttmilestone{Proposal Presentation}{19}\\
+	
+	\ganttbar[bar/.append style={fill=blue!40}]{Writing R Codes}{19}{20} \\
+	\ganttbar[bar/.append style={fill=blue!40}]{Testing R codes}{21}{22}\\
+	\ganttbar[bar/.append style={fill=blue!40}]{Results}{21}{25}\\
+	\ganttbar[bar/.append style={fill=blue!40}]{Discussion}{25}{28} \\			
+	\ganttbar[bar/.append style={fill=blue!40}]{Conclusion}{29}{29} \\
+	
+	\ganttmilestone{Project Presentation}{30}
+	
+	\ganttlink{elem0}{elem1}
+	\ganttlink{elem1}{elem2}
+	\ganttlink{elem2}{elem3}
+	\ganttlink{elem3}{elem4}
+	\ganttlink{elem4}{elem5}
+	\ganttlink{elem5}{elem6}
+	\ganttlink{elem6}{elem7}
+	\ganttlink{elem7}{elem8}
+	\ganttlink{elem8}{elem9}
+	\ganttlink{elem9}{elem10}
+	\ganttlink{elem10}{elem11}
+\end{ganttchart}
+
+%\newpage
+%\lhead{Appendix. \emph{R Program Codes}}
+%\section{R Program Codes}

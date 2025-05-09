@@ -1,0 +1,341 @@
+\chapter{Methodology} 
+\label{Chapter3} 
+\lhead{Chapter 3. \emph{Methodology}} 
+%----------------------------------------------------------------------------------------
+\section{Introduction}
+This chapter gives a description of the definitions and notations used in generalized linear models; gamma model with log-link,
+the methodology of the study. Section 3.2 introduces the GLM distribution, assumptions and other concepts used in GLM gamma with log-link. Section 3.3 covers the estimation of model parameters by use of the gamma with log-link approach. Section 3.4 covers the sufficiency of the fitted GLM model.Section 3.5 covers the the prediction using the fitted GLM model. Section 3.6 involves checking of the accuracy of the predicted sales. Section 3.7 describes the data source and the data to be used. 
+
+\section{Generalized Linear models}
+The GLM is a generalized form of linear models that extends the scope of linear models to allow for non-normality in the response variable. It provides a mean for modeling the relationship between one or more explanatory variables and a response variable whose distribution can be expressed in the form: 
+\begin{equation}
+	\centering
+	Y_i =\beta_0 + \beta_1 X_1 + \ldots, + \beta_{p-1}X_{p-1}+\epsilon_{i} 
+\end{equation}
+which can be written in matrix form in the following way
+\begin{equation}
+	Y=X\beta + \epsilon
+\end{equation}
+where y is a vector that consists of the observations of the dependent variable\\
+$\vec{Y}$= $ \begin{pmatrix}
+	y_1 \\
+	y_2 \\
+	. \\
+	. \\
+	. \\
+	y_n 
+\end{pmatrix}  $\\
+and X is a matrix with dimension n X p
+\begin{equation}
+	X= \begin{pmatrix}
+		1 & x_{11} & . & . & . & x_{1(p-1)} \\
+		1 & x_{21} & . & . & . & x_{2(p-1)} \\
+		. & . &  &  &  & . \\
+		. & . &  &  &  & . \\
+		. & . &  &  &  & . \\
+		1 & x_{n1} & . & . & . & x_n{(p-1)} 
+	\end{pmatrix}
+\end{equation}
+where the column of ones corresponds to the intercepts and the other columns contain the values of the independent variables.\\
+$\beta$ is a vector $\vec{\beta}$=$(\beta_0,...,\beta_{p-1})^{r}$ containing the parameters \textit{\textbf{p}} which are to be estimated.\\
+And finally, \textbf{$\epsilon$} is the residual vector $\vec{\epsilon}$=$(\epsilon_{1},...,\epsilon_{n})^{r}$\\
+A GLM is used for determining the relationship between the mean of the response variable and the covariates. By setting the link function g($\mu$)=$\eta$, then, assuming that the link function is invertible, the mean $\mu$ can be made as the subject of the formula:
+\begin{equation}
+	\mu=g^{-1}(\eta)
+\end{equation}
+A GLM model follows certain assumptions such as: the linear component is retained, distributions are restricted to the exponential dispersion family, response variables must be independent, the mean response changes with the conditions; but the functional shape of the distribution remains fundamentally unchanged and the mean response changes in some linear way as the conditions change.
+A GLM consists of three components;
+\subsubsection{A random component}
+Specifying the conditional distribution of the response variable, Yi (for the ith of n independently sampled observations), given the values of the explanatory variables in the model. In Nelder and Wedderburn’s original formulation, the distribution of Yi is a member of an exponential family, such as the Gaussian (normal), binomial, Poisson, gamma, or inverse-Gaussian families of distributions. Subsequent work, however, has extended GLMs to multivariate exponential families (such as the multinomial distribution),to certain non-exponential families (such as the two-parameter negative-binomial distribution), and to some situations in which the distribution of Yi is not specified.
+\subsubsection{The Random Component : The Exponential Family}
+In a GLM, y—the target variable—is modeled as a random variable that follows a probability distribution. That distribution is assumed to be a member of the \textit{exponential family} of distributions.\\
+The exponential family is a class of distributions that have certain properties that are useful in fitting GLMs. It includes many well-known distributions, such as the Normal, Poisson, Gamma, Weibull and Binomial distributions.\\
+The probability mass function of the exponential family of distributions is defined in the following form
+\begin{equation}
+	\centering
+	f(y|\theta,\phi) = 
+	\exp\left\{ \frac{y\theta-b(\theta)}{\phi} + c(y,\phi)\right\}
+\end{equation}
+For the exponential distribution, the expected value of a random variable $Y$ is 
+expressed as
+\begin{equation}
+	E[Y]=\mu = b'(\theta)
+\end{equation}
+and the variance is denoted as follows
+\begin{equation}
+	Var(Y) = b"(\theta)a(\phi) = \mu'(\theta)a(\phi)
+\end{equation}
+The mean and the variance are derived from the log-likelihood function of the exponential distribution family and its differentials
+\begin{equation}
+	\frac{\partial l(\theta,\phi,y)}{\partial \theta} = \frac{\partial}{\partial \theta} \left\{\frac{y\theta - b(\theta)}{a(\phi)} + c(y,\phi)\right\} = \frac{y- b'(\theta)}{a(\phi)}
+\end{equation}
+where $l(\theta,\phi;y)$ = $log f(\theta,\phi;y)$ and consequently
+\begin{equation}
+	\frac{\partial^{2} l(\theta,\phi;y)}{\partial\theta^{2}} = -\frac{b"(\theta)}{a(\phi)}
+\end{equation}
+Furthermore, from the theory of Maximum Likelihood Estimation, MLE, the following expressions are known
+\begin{equation}
+	\centering
+	E\left\{\frac{\partial l}{\partial \theta}\right\} = 0
+\end{equation}
+and
+\begin{equation}
+	\centering
+	E\left\{\frac{\partial^{2} l}{\partial \theta^{2}}\right\} + 	E\left\{\frac{\partial l}{\partial \theta}\right\}^{2} = 0
+\end{equation}
+\subsubsection*{A linear predictor}That is a linear function of regressors
+\begin{equation}
+	\centering
+	\eta = \beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1} 
+\end{equation}
+As in the linear model, and in the logit and probit models, the regressors $X_{ij}$ are prespecified functions of the explanatory variables and therefore may include quantitative explanatory variables, transformations of quantitative explanatory variables, polynomial regressors, dummy regressors, interactions, and so on. Indeed, one of the advantages of GLMs is that the structure of the linear predictor is the familiar structure of a linear model.
+\subsubsection*{Link function}
+A smooth and invertible linearizing link function $g(.)$, which transforms the expectation of the response variable, $\mu_i = E(Yi)$, to the linear predictor:
+\begin{equation}
+	\centering
+	g(\mu) = \beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1} 
+\end{equation}
+Some common link functions include;
+\begin{table}[H]\caption{Common link functions}
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{link}            & \textbf{$\eta=g(\mu_{i})$}                   & \textbf{$\mu_i=g^{-1}\eta_i$} \\ \hline
+		Identity        & $\mu_i$                                              & $\eta_i$                                                \\ \hline
+		log             & $log_{e}\mu_i$                                    & $\exp^{\eta_i}$       \\ \hline
+		Inverse         & $\mu_{i}^-1$                      &$\eta_{i}^-1$                                                                       \\ \hline
+		Inverse- square & $\mu_{i}^-2$                      &$\eta_{i}^{-1/2}$                                                                       \\ \hline
+		Square-root     & $\sqrt(\mu_i)$                        &$\eta_{i}^2$ \textbf{}                                                             \\ \hline
+		logit           & $log_e \frac{\mu_i}{1-\mu_i}$                                        &$\frac{1}{1+\exp^{\eta_{i}}}$ \textbf{}                                                             \\ \hline
+		probit          & $\phi^{-1}(\mu_i)$ &$\phi(\eta_{i})$ \textbf{}                                                             \\ \hline
+	\end{tabular}
+\end{table}
+Because the link function is invertible, we can also write
+\begin{equation}
+	\centering
+	\mu_{i}=g^{-1}(\eta_{i})=g^{-1}(\beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1})
+\end{equation}
+and, thus, the GLM may be thought of as a linear model for a transformation of the expected
+response or as a nonlinear regression model for the response. The inverse link $g^{-1}(.)$ is also called the \textit{mean function}.  Note that the identity link simply returns its argument unaltered, $\eta_{i}$=$g(\mu_{i})$=$\mu_{i}$ and thus $\mu_{i}$=$g^{-1}(\eta_{i})$=$\eta_{i}$
+
+\subsection*{The Gamma distribution}
+The gamma distribution can take on a pretty wide range of shapes and given the link between the mean and the variance through its two parameters. It deals with heteroskedasticity in non-negative data. It works well for positive-only data with positively-skewed errors. The Gamma distribution is flexible and can mimic, among other shapes, a log-normal shape. The log link can represent an underlying multiplicative process.\\
+The probability density function of a gamma distribution
+is as follows:
+\begin{equation}
+	\centering
+	f(y_i)=\frac{1}{\beta^\alpha\Gamma\alpha}y_i^{\alpha-1}\exp-\frac{y_i}{\beta}
+\end{equation}
+\subsection{Parameter Estimation of the fitted GLM model}
+The Maximum likelihood method is commonly used when estimating the parameters in a GLM. The method aims to find estimates of the parameters $\beta_{i}$ that have the highest probability of corresponding to the true values. Hence, when estimating the parameters, the intention is to search for the values that maximize the log likelihood. The likelihood function is as defined in equation 5.\\
+Hence, the log-likelihood function can be written as
+\begin{equation}
+	\centering
+	\textit{l} = L(f(y|\theta,\phi)) = \frac{y\theta-b(\theta)}{\phi} + c(y,\phi)
+\end{equation}
+By differentiating \textit{l} w.r.t. the elements of $\beta$, the regression coefficients, using the chain rule the following is obtained
+\begin{equation}
+	\frac{\partial \textit{l}}{\partial \beta_{j}} = \frac{\partial \textit{l}}{\partial \theta} \frac{\partial \theta}{\partial \mu} \frac{\partial \mu}{\partial \eta} \frac{\partial \eta}{\partial \beta_{j}}
+\end{equation}
+The relations of b'= $\mu$, b"= V and $\eta$= $\sum_{j}x_{j}\beta_{j}$ implies that $\frac{\partial \mu}{\partial \theta}$= V and $\frac{\partial \eta}{\partial \beta_{j}}$= $x_{j}$.\\
+By defining 
+\begin{equation}
+	W^{-1}= (\frac{\partial \eta}{\partial \mu})^{2} V
+\end{equation}
+and inserting these expressions in the differential equations above yields
+\begin{equation}
+	c\frac{\partial \textit{l}}{\partial \beta_{j}}= \frac{(y-\mu)}{a(\phi)} \frac{1}{V} \frac{\partial \mu}{\partial \eta} x_{j} = \frac{W}{a(\phi)} (y-\mu)\frac{\partial \eta}{\partial \mu}x_{j}
+\end{equation}
+The above expressions are valid for one single observation and the extensive notation of the likelihood for one parameter $\beta_{j}$ is given by summing over the observations in the following way
+\begin{equation}
+	\sum_{i}^{}\frac{W_{i}(y_{i}-\mu_{i})}{a(\phi)}\frac{\partial \mu_{i}}{\partial \eta_{i}} x_{ij}
+\end{equation}
+This can be solved w.r.t $\beta_{j}$ since we have that the $\mu_{i}'s$ are functions of the $\beta_{j}'s$. The asymptotic variances and covariance matrix of the estimated parameters is obtained by the inverse of the Fisher information matrix \textit{$l_{\theta}$}
+
+$ \begin{pmatrix}
+	var(\hat{\beta_{0}}) & cov(\hat{\beta_{0}},\hat{\beta_{1}}) & . & . & . & cov(\hat{\beta_{o}},\hat{\beta_{p-1}}) \\
+	cov(\hat{\beta_{1}},\hat{\beta_{0}}) & var(\hat{\beta_{1}}) & . & . & . & . \\
+	. & . &  &  &  & . \\
+	. & . &  &  &  & . \\
+	&  &  &  &  &  \\
+	cov(\hat{\beta_{p-1}},\hat{\beta_{0}}) & & . & . & . & var(\hat{\beta_{p-1}}) 
+\end{pmatrix}  $
+\subsubsection{Numerical procedures of parameter estimation}
+Maximizing the log-likelihood is done by putting the log-likelihood function in extensive notation equal to zero and solve the equation which is done numerically. An approach that is 
+commonly used is iteratively re-weighted least squares \cite{mccullagh2019generalized} which is described as follows:
+\begin{enumerate}
+	\item Linearize the link function \textit{g(.)} with for example first order Taylor approximation in the following way
+	\begin{equation}
+		g(y) ~z, z = g(\mu) + (y-\mu) g'(\mu)
+	\end{equation}
+	\item If we let $\hat{\eta_{0}}$ be the current estimate of the linear predictor and we let$\hat{\mu_{0}}$ be the corresponding fitted value given from the link function $\eta$= g($\mu$) then we can form the adjusted dependent variate as 
+	\begin{equation}
+		z_{0} = \eta_{0} + (y-\hat{\mu_{0}})(\frac{\partial \eta}{\partial \mu})^{2}
+	\end{equation}
+	which is evaluated at $\hat{\mu_{0}}$
+	\item Derive the weighted matrix W from
+	\begin{equation}
+		W^{-1} = (\frac{\partial \eta}{\partial \mu})^{2} V_{0}
+	\end{equation}
+	V denoted the variance function.
+	\item Run a weighted regression of z which is the dependent variable on the predictors $x_{1},x_{2},...,x_{p}$ using the weights $W_{0}$. This yields new, updated values of the estimated parameter $\hat{\beta_{1}}$, from which one can calculate an updated value of the linear predictor estimate $\hat{\eta_{1}}$.
+	\item Repeat step 1-4 until the stop conditions are applied.
+\end{enumerate}
+\section{Assessing the fit of the model}
+When assessing the fit of a statistical model, the model is evaluated on the discrepancy between the observed values and the predicted values, ergo, how well the model results corresponds to 
+the true values. The measures of assessing the fit of the model chosen for this study is a Wald test, Pearson $\chi^{2}$ statistics, Akaike’s Information Criterion, multicollinearity and overdispersion.
+\subsection{Variable significance using Wald test}
+A significance test can be performed to ensure that the chosen variables are significant, and one
+method of doing this is to perform the Wald test. The outline of the test is to fit a unrestricted
+model and assess if the results are within the range of sampling variability and agree with the	hypothesis \cite{greene2012mastery}.
+To perform tests on individual coefficients from the model is a simple case of the Wald test.
+We can write the null hypothesis as follows: 
+\begin{equation}
+	\centering
+	H_0:\beta_i =0 
+\end{equation}
+\begin{equation}
+	\centering
+	H_1:\beta_i\ne0 
+\end{equation}
+And the following equations yields the test statistics for the null hypothesis 
+\begin{equation}
+	\centering
+	Z_i = \frac{\hat{\beta_i}}{se (\beta_i)}
+\end{equation}
+Where se($\hat{\beta_{j}}$) = $\frac{1}{\sqrt{I_{n}(\hat{\beta_{j}})}}$, where $I_{n}$ is the Fisher Information, which is the standard error of the maximum likelihood coefficient estimate, $\hat{\beta_{j}}$, of the j'th independent parameter.\\
+For the significance level of $\alpha$ and for the $\alpha$-quantile of the standard normal distribution depicted as $Z_{\alpha/2}$, the null hypothesis can be rejected if $|Z_{j}|$> Z$_\alpha/2$
+\subsection{Chi-square goodness of fit test} 
+
+Tne way of testing the goodness of fit of the model is the generalized Pearson $\chi^2$ test, which
+has the following definition
+\begin{equation}
+	\centering
+	\chi^2 = \sum_{i=1}\frac{(\hat{y}-\mu_i)^2}{\hat{v}(\hat{\mu})}	
+\end{equation}
+where, the estimated variance function is referred as $\hat{v}(\hat{\mu})$ and can be elaborated in the following
+way 
+\begin{equation}
+	\centering
+	\hat{v}(\hat{\mu})=b"(b'(-1))(\hat{\mu}	
+\end{equation}
+The value of $\chi^2$ is then compared against the critical value of $\chi^2_c $ on a given significance level and with given degrees of freedom. If the critical value is less than the calculated value, then the null hypothesis that the distribution is true can be rejected, hence the model does not fit the data well based on the given level of significance.
+where ${se(\beta_i)}$ is the Fisher information, which is the standard error of the maximum likelihood coefficient estimate $\beta_i$ of the $i^{th}$ independent parameter.
+For the significance level $\alpha $and for the $\alpha$-quantile of the standard normal distribution depicted as $\lambda_{\frac{\alpha}{2}}$
+the null hypothesis can be rejected if $\abs{Z_i}<\lambda_{\frac{\alpha}{2}}$
+
+\subsection{Residual analysis}
+\begin{itemize}
+	\item Pearson residual
+	
+	Pearson residual is based on the idea of subtracting off the mean and dividing by the standard deviation.
+	\begin{equation}
+		r_i = \frac{y_i - \pi_i}{\sqrt{\widehat{\pi_i}(1-\widehat{\pi})}}
+	\end{equation}
+	\item . {Likelihood Ratio Test and Deviance}
+\end{itemize}
+\begin{itemize}
+	\item Goal is to compare a model to a ``Super" model that fits the data as well as possible.
+	\item Example: If an experiment has $c$ outcomes, you can't beat a multinomial with $c$ categories. 
+	\item The $c-1$ parameters soak up all $c-1$ degrees of freedom, so in this case you could call the \textbf{S}uper model ``\textbf{S}aturated."
+\end{itemize}
+
+
+Deviance = $-2(\ell_M-\ell_S)$
+$\ell$ is the maximized log likelihood 
+\begin{itemize}
+	\item Denote the parameter of the Model by $\theta$ and the parameter of the Supermodel by $\sigma$
+	\item The models might look very different, including the parameter spaces.
+\end{itemize}
+
+\begin{eqnarray*}
+	-2(\ell_M-\ell_S) & = & -2log\frac{ \prod_{i=1}^n f(y_i|\widehat{\theta}) }
+	{ \prod_{i=1}^n f(y_i|\widehat{\sigma}) }\\
+	& = &  -2log \prod_{i=1}^n \frac{f(y_i|\widehat{\theta})}
+	{f(y_i|\widehat{\sigma})} \\
+	& = & \sum_{i=1}^n -2\log \left(\frac{f(y_i|\widehat{\theta})}
+	{f(y_i|\widehat{\sigma})} \right) \\
+	& = & \sum_{i=1}^n d_i
+\end{eqnarray*} 
+
+
+
+Deviance = $-2(\ell_M-\ell_S)$ 
+$\ell$ is the maximized log likelihood
+\begin{itemize}
+	\item Denote the parameter of the Model by $\theta$ and the parameter of the Supermodel by $\sigma$
+	
+\end{itemize}
+\begin{eqnarray*}
+	-2(\ell_M-\ell_S) & = & -2log\frac{ \prod_{i=1}^n f(y_i|\widehat{\theta}) }
+	{ \prod_{i=1}^n f(y_i|\widehat{\sigma}) }\\
+	& = &  -2log \prod_{i=1}^n \frac{f(y_i|\widehat{\theta})}
+	{f(y_i|\widehat{\sigma})} \\
+	& = & \sum_{i=1}^n -2\log \left(\frac{f(y_i|\widehat{\theta})}
+	{f(y_i|\widehat{\sigma})} \right) \\
+	& = & \sum_{i=1}^n d_i
+\end{eqnarray*} 
+
+
+Deviance = $-2log\frac{ \prod_{i=1}^n f(y_i|\widehat{\theta}) }
+{ \prod_{i=1}^n f(y_i|\widehat{\sigma}) }= {\sum_{i=1}^n d_i}$
+\begin{itemize}
+	
+	\item The deviance terms $d_i$ are contributions to a difference in fit (deviance) between the model and the best possible model.
+	\item They are somewhat like residuals.
+	\item Maybe big ones are worth investigating.
+	\item Deviance residuals are defined as $r^D_i = $sign$(y_i-\widehat{\mu}_i)\sqrt{d_i}$
+\end{itemize}
+\subsection{ Overdispersion}
+The phenomenon of overdispersion occurs when the variance is larger than expected for the choice of distribution. The foremost cause of presence of overdispersion is lack of homogeneity. Overdispersion can be detected by measuring the relationship between the residual deviance and the degrees of freedom by dividing the deviance by the df. Although, a poor fit of the model can also be a reflection of wrongly made assumptions of the distribution and the link function. Furthermore, the choice of linear predictors might be wrong, causing the bad fit of the model and moreover, the presence of outliers in the data might also cause the bad fit. These reasons should be examined before drawing any conclusions that overdispersion is the reason behind  the poor model fit. Overdisperion causes underestimations of the standard errors which produces too large test statistics and hence it is easier for the model to produce significant results.\\
+When plotting the residuals against the fitted value one should be able to see a \textit{'random'} pattern with a constant range and zero mean. If the link function used is inaccurate and if non-linear terms are omitted in the linear predictor, this might cause the residual plot to deviate from the desired result \citet{berndtsson2002planning}. 
+\subsection{Multicolinearity}
+In multiple regression, when a number of the explanatory variables are closely dependent on each other, the problem of multicollinearity arises. Multicollinearity can result in larger confidence intervals and larger variances and covariances which might cause skewed results or misinterpreted analyses when predicting the response variable.\\
+One way to detect the presence of multicollinearity is to calculate the VIF, Variance Inflation Factor, which is the ratio of the variance of the values of the coefficients $\beta_{j}$ of the full model divided by the variance of the single value of $\beta_{j}$if fitted alone.\\
+The VIF is computed in the following way
+\begin{equation}
+	\centering
+	VIF=\frac{1}{1 - {R^{2}}_{x_{j}|x-j}}	
+\end{equation}
+where ${R^{2}}_{x_{j}|x-j}$ is the $R^2$ from a linear regression of $X_j$ onto all other independent variables.\\
+As a rule of thumb, it is likely that there exists problematic collineraity among the predictor variables within a multiple regression if the values of the VIF exceeds 5 or 10 and such variables should be excluded from the model. In practise though, there will likely be a small amount of multicollinearity between the variables \citet{james2013introduction}.
+\subsection{Akaike information criterion (AIC)}
+A measure of fit that is often used as a means for choosing between models is the following expression
+\begin{equation}
+	\centering
+	D_c= D-\alpha q \phi
+\end{equation}
+where D is the deviance, q is the number of parameters that are included in the model and $\phi$ is the dispersion parameter. The general idea is to penalize models that includes extra parameters 
+and by that favour simpler models. When $\alpha$ = 2, the above measure is known as the Akaike’s Information Criterion, AIC, which can also be written as
+\begin{equation}
+	\centering
+	AIC = -2\ln(L) + 2q
+\end{equation}
+where L is referred to the maximum value of the likelihood function for the model and again, q is the number of parameters included in the model. This measure can be used when deciding if or not to include an explanatory variable in a model since the model with the lowest AIC value is preferred over larger values when comparing full and nested model, where one or more 
+variables which are included in the full model have been removed \cite{Montgomery}.
+\section{Prediction using the fitted model}
+The acquired supermarket sales data includes the total sales of a certain product. Hence, this can be referred to as a response variable that counts the occurrences of a specific event, and therefore the data can be considered as count data since the observations of the sold quantity is restricted to non-negative integer values. Therefore, since modeling the relationship between the response variable as a count, the Gamma distribution will be assumed as the appropriate distribution for the initial trials of modeling the predicted sales quantity.\\
+The collected data needs to be restructured in order to be able to perform the analysis. Assuming that $X_{k}$ and $X_{r}$ are independent, then the total predicted sales quantity for the product will be $X=X_{k}-X_{r}$. The independent variables to be included in the model will be chosen out of the total collected data. Subsequently, each of those explanatory variables will be clustered together in order for better classifying the characteristics for the variables.
+\section{Checking the Accuracy of predicted sales}
+\subsection{Assessing Fit with Plots of between Actual and Predicted sales}
+
+A very simple and easily understandable diagnostic to assess the performance of a model is to create a plot of the actual target variable (on the y-axis) versus the predicted target variable (on the x-axis) for the model. If a model fits well, then the actual and predicted target variables should follow each other closely.
+This can be illustrated, for example in the figure 3.1
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{../../../Downloads/loglink}
+	\caption{}
+	\label{fig:loglink}
+\end{figure}
+\subsection{Quantile plots}
+
+Quantile plots are a straightforward visual representation of a model’s ability to accurately differentiate between the best and the worst risks.
+A QQ-plot for gamma with log-link is as illustrated in figure 3.2
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{../../../Downloads/CekkIN2}
+	\caption{}
+	\label{fig:cekkin2}
+\end{figure}
+\section{Data Source and Data Description}
+The data to be used in this study is readily available in the Kaggle website under the link; $https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales$. The dataset is one of the historical sales of supermarket company which has recorded in 3 different branches for 3 months data. The dataset consists of 1001 observations which include 17 variables, i.e. the invoice ID, the branch, city where the supermarket is located, customer type; either a member or normal, the gender; male or female, product line, the unit price of the goods purchased, the quantity, tax at 5\%, the total amount of the purchased items, the date of purchase, time of purchase, the payment method used; ewallet/cash/credit card, cost of goods sold, gross margin, gross income and the rating that was provided by the serviced customer. The total sales is the dependent variable. There are 4 continuous non-negative independent variables which are; unit price of goods, the quantity, tax and cost of goods sold (cogs).

@@ -1,0 +1,664 @@
+\chapter{Methodology} 
+\label{Chapter3} 
+\lhead{Chapter 3. \emph{Methodology}} 
+%----------------------------------------------------------------------------------------
+\section{Introduction}
+This chapter presents the methodology of the study. It gives a description of the definitions and notations used in generalized linear models. Section 3.2 introduces the generalized linear model, assumptions and other concepts used in the generalized linear models. Section 3.3 presents the estimation of the generalized linear model parameters. Section 3.4 assesses the fit of the generalized linear mode. Section 3.5 covers the the prediction using the fitted generalized linear model. Section 3.6 involves checking of the accuracy of the predicted sales.
+
+\section{Generalized Linear models}
+The generalized linear model is a generalized form of linear models that extends the scope of linear models to allow for non-normality in the response variable. It provides a mean for modeling the relationship between one or more explanatory variables and a response variable whose distribution can be expressed in the form: 
+\begin{equation}
+	\centering
+	\label{eqn:GLM}
+	Y_i =\beta_0 + \beta_1 X_1 + \cdots + \beta_{p}X_{p} + \epsilon
+\end{equation}
+where \bm{$Y_{i}$} is the response variable, \bm{$X_{i}$} is the explanatory variable.
+%Which can be written in matrix form in the following way
+%\begin{equation}
+%	\bm{Y} =\bm{X} \; \bm{\beta} \:+\: \bm{\epsilon}
+%\end{equation}
+%Where \textbf{Y} is a vector that consists of the observations of the dependent variable\\
+%\begin{equation}
+%	\centering
+%	\textbf{Y}=  \begin{pmatrix}
+%		y_1 \\
+%		y_2 \\
+%		. \\
+%		. \\
+%		. \\
+%		y_n 
+%	\end{pmatrix}
+%\end{equation}
+%\\
+%and \textbf{X} is a matrix with dimension n$\:$$\times$ p
+%\begin{equation}
+%	\centering
+%	\textbf{X}= \begin{pmatrix}
+%		1 & x_{11} & . & . & . & x_{1(p-1)} \\
+%		1 & x_{21} & . & . & . & x_{2(p-1)} \\
+%		. & . &  &  &  & . \\
+%		. & . &  &  &  & . \\
+%		. & . &  &  &  & . \\
+%		1 & x_{n1} & . & . & . & x_{n(p-1)} 
+%	\end{pmatrix}
+%\end{equation}
+%where the column of ones corresponds to the intercepts and the other columns contain the values of the independent variables.
+
+%$\bm{\beta}$ is a vector $\bm{\beta}$=$(\beta_0,...,\beta_{p-1})^{\prime}$ containing the parameters \textit{\textbf{p}} which are to be estimated. And finally, $\bm{\epsilon}$ is the residual vector $\bm{\epsilon}$=$(\epsilon_{1},...,\epsilon_{n})^{\prime}$
+
+A GLM is used for determining the relationship between the mean of the response variable and the covariates. By setting the link function g($\mu$)=$\eta$, then, assuming that the link function is invertible, the mean $\mu$ can be made as the subject of the formula:
+\begin{equation}
+	\mu=g^{-1}(\eta)
+\end{equation}
+A GLM model follows certain assumptions such as: the linear component is retained, distributions are restricted to the exponential dispersion family, response variables must be independent, the mean response changes with the conditions; but the functional shape of the distribution remains fundamentally unchanged and the mean response changes in some linear way as the conditions change.
+A GLM consists of three components;
+\subsection{A random component}
+A random component specifies the conditional distribution of the response variable, $\bm{Y_i}$ (for the ith of n independently sampled observations), given the values of the explanatory variables in the model.
+\section*{The Exponential Family}
+ In Nelder and Wedderburn’s original formulation \citep{nelder1972generalized}, the distribution of $\bm{Y_i}$ is a member of an exponential family, such as the Gaussian (normal), binomial, Poisson, gamma, or inverse-Gaussian families of distributions. Glm has been extended to multivariate exponential families (such as the multinomial distribution),to certain non-exponential families (such as the two-parameter negative-binomial distribution), and to some situations in which the distribution of $\bm{Y_i}$ is not specified.
+%In a GLM, $y$ the target variable is modeled as a random variable that follows a probability distribution. That distribution is assumed to be a member of the \textit{exponential family} of distributions.\\
+%The exponential family is a class of distributions that have certain properties that are useful in fitting GLMs. It includes many well-known distributions, such as the Normal, Poisson, Gamma, Weibull and Binomial distributions.\\
+The probability mass function of the exponential family of distributions is defined in the following form
+\begin{equation}
+	\centering
+	\label{eqn:exp}
+	f(y;\theta,\phi) = 
+	\exp\left\{ \frac{y\theta-b(\theta)}{\phi} + c(y,\phi)\right\}
+\end{equation}
+where $\theta$ is the canonical parameter that depends on regressors via the linear predictor further, $\phi$ is the dispersion parameter often known. The functions a(.), b(.) and c(.) are known and determine which member of the family is used.
+The log likelihood of equation (3.2.5) expressed as a function of$\theta_i$ and$\phi$ is given by
+\begin{equation}
+	\centering
+	l(\theta_i,\phi;y_i)= logf_y(y_i;\theta_i,\phi) 
+\end{equation}
+
+the log likelihood is given by
+\begin{equation}
+	\centering 
+	l(\theta_i,\phi;y_i) =\left\{ \frac{y\theta_i-b(\theta_i)}{\phi} + c(y,\phi)\right\}
+\end{equation}
+Expressions for the first and second derivatives of the log likelihood in terms of the mean and variances of$y_i$ and the function of $a(\phi)$ are required. The mean and variance can be derived using the results
+\begin{equation}
+	E\left(\frac{\partial l(\theta_i,\phi;y_i)}{\partial\theta_i}\right)=0
+\end{equation}
+\begin{equation}	
+	E\left(\frac{\partial^2 l(\theta_i,\phi;y_i)}{\partial\theta_i^2}\right)= -E\left(\frac{\partial l(\theta_i,\phi;y_i)}{\partial\theta_i}\right)^2
+\end{equation}
+
+First by the partial derivative of the log likelihood with respect to $\theta_i$, we obtain 
+\begin{equation}
+	E\left(\frac{\partial l(\theta_i,\phi;y_i)}{\partial\theta_i}\right)=\frac{y_i-b^{\prime}(\theta_i)}{a(\phi)}
+\end{equation}
+
+where $\prime$ denotes differentiation with respect to $\theta_i$. By taking the expectation and setting the equation to zero,we have
+\begin{equation}
+	E\left(\frac{y_i-b^{\prime}(\theta_i)}{a(\phi)}\right)=0
+\end{equation}
+\begin{equation}
+	\frac{\mu_i-b^{\prime}(\theta_i)}{a(\phi)}= 0
+\end{equation}
+
+consequently, the mean is:
+\begin{equation}
+	E(y_i) = b^{\prime}(\theta_i)= \mu_i 
+\end{equation}
+for$\;$ $a(\phi)\ne0$
+
+
+The variance can be derived by taking the second partial derivative of the log likelihood function with respect to $\theta_i$, to obtain
+\begin{equation}
+	\frac{\partial^2 l(\theta_i,\phi;y_i)}{\partial\theta_i^2}=\frac{-b^{\prime\prime}(\theta_i)}{a(\phi)}
+\end{equation}
+substituting in equation (3.2.14) and equation (3.2.11) into equation(3.2.9)
+\begin{equation}
+	E\left(\frac{-b^{\prime\prime}(\theta_i)}{a(\phi)}\right)=E\left(\frac{y_i-b^{\prime}(\theta_i)}{a(\phi)}\right)^2
+\end{equation}
+
+Reordering and using $var(y_i)=E[(y_i-E(y_i))^2]$ 
+where $E(y_i)=b^{\prime}(\theta_i)$
+
+\begin{equation}
+	\frac{-b^{\prime\prime}(\theta_i)}{a(\phi)}=\frac{-var(y_i)}{a(\phi)^2}
+\end{equation}
+thus,
+\begin{equation}
+	var(y_i)=b^{\prime\prime}(\theta_i)a(\phi)=V(\mu_i)a(\phi)
+\end{equation}
+\section*{Gamma distribution}
+The gamma distribution can take on a pretty wide range of shapes and given the link between the mean and the variance through its two parameters. It deals with heteroskedasticity in non-negative data. It works well for positive-only data with positively-skewed errors. The log link can represent an underlying multiplicative process.\\
+The probability density function of a gamma distribution
+is as follows:
+\begin{equation}
+	\centering
+	\label{eqn:GE}
+	f(x;\alpha,\beta)=
+	\begin{cases}
+		{\frac{X^{\alpha-1}}{\gamma(\alpha)\;  \beta^\alpha} }\; exp(\frac{-x}{\beta}) &\; \alpha > 0 , \; \beta > 0 ,\; x > 0
+	\end{cases}
+\end{equation}	
+%changing the parameters from $\alpha$ and $\lambda$ to $\alpha$ and $\mu$=$\frac{\alpha}{\lambda}$
+%\begin{equation}
+%	\centering
+%	\label{eqn:GER}
+%	f(y|\theta,\phi)={\frac{\lambda^\alpha}{\gamma(\alpha)}} y^{\alpha-1}exp(-\lambda y) ={\frac{\alpha^\alpha}{\mu^\alpha \gamma(\alpha)}}y^{\alpha-1} exp(-\frac{y\alpha}{\mu})
+%\end{equation} 
+%$\theta$ = -$\frac{1}{\mu}$
+
+%$\phi$ = $\alpha$
+
+%$a(\phi) = \frac{1}{\phi}$
+
+%b($\theta$) = -log(-$\theta$)
+
+%c(y,$\phi$) = ($\phi$-1)log y+ $\phi$log$\phi$-log$\gamma$($\phi$)
+
+To estimate the parameters of the gamma distribution that best fits this sampled data,the maximum likelihood of the parameters can be used.\\
+From equation (\ref{eqn:GE}) the log-likelihood can be obtained resulting in
+\begin{equation}
+	\begin{aligned}[b]
+		log(f(x;\alpha,\beta)) &= (\alpha-1)\sum log x_{i} - n log \Gamma\alpha - n \alpha log \beta - \frac{1}{\beta} \sum x_{i}\\ & = n(\alpha\ - 1) log x - nlog \Gamma\alpha - n \alpha log \beta - \frac{n \bar{x}}{\beta}
+	\end{aligned}	
+\end{equation}
+The MLE which maximizes (\ref{eqn:GE}) is given as;
+\begin{equation}
+	\centering
+\begin{aligned}[b]
+	\frac{d}{d \alpha} log(f(x;\alpha,\beta)) & =  0 \\
+	log(f(x;\alpha,\beta)) & = n\alpha log \beta - n log \Gamma (\alpha) + (\alpha - 1) \sum_{i=1}^{n} log x_{i} -\beta \sum_{i=1}^{n} x_{i}\\
+	0 & = nlog\beta - \frac{n}{\Gamma (\alpha)} \Gamma^{\prime} (\alpha) + \sum_{i=1}^{n} log x_{i} \\
+	\phi(\alpha) & =  \frac{\Gamma^{\prime}(\alpha)}{\Gamma(\alpha)}\\
+	\phi(\alpha) & =  \hat{\alpha}\\
+	\hat{\alpha} & =  log\beta + \frac{1}{n} \sum_{i=1}^{n} log x_{i}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\centering
+\begin{aligned}[b]
+	\frac{d}{d \beta} log(f(x;\alpha,\beta)) & =  0 \\
+	0 & = \frac{n \alpha}{\beta} - \sum_{i=1}^{n} x_{i}\\
+	\hat{\beta} & = \frac{\hat{\alpha}}{\frac{1}{n}\sum_{i=1}^{n} x_{i}}\\
+	\hat{\beta} & = \frac{\hat{\alpha}}{\bar{x}}
+\end{aligned}	
+\end{equation}
+The mean of the Gamma distribution can be obtained as follows;
+\begin{equation}
+	\centering
+\begin{aligned}[b]
+	\centering
+	E(X) &= \int_0^\infty x f_X(x) dx \\
+	&= \int_0^\infty x \cdot \frac{\lambda^{\alpha}}{\Gamma{\alpha}} x^{\alpha - 1} e^{-\lambda x} {\rm d}x \\
+	&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} x \cdot x^{\alpha - 1} e^{-\lambda x} {\rm d}x \\
+	&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} x^{\alpha} e^{-\lambda x} {\rm d}x \\
+	&= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \frac{\Gamma(\alpha + 1)}{\lambda^{\alpha + 1}}	\\
+	&= \frac{\alpha\Gamma(\alpha)}{\lambda\Gamma(\alpha)}	\\
+	&= \frac{\alpha}{\lambda}.
+\end{aligned}
+\end{equation}
+Similarly the variance can be obtained by getting the second moment and subtracting the square of the mean. The second moment can be obtained as follows;
+\begin{equation}
+	\centering
+	\begin{aligned}[b]
+		E(X^2)	&=	\int_0^{\infty} x^2 {\rm d}x \\
+		&=	\int_0^{\infty} x^2 \cdot \frac{\lambda^{\alpha}}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\lambda x} {\rm d}x \\
+		%&=	\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} x^2 \cdot x^{\alpha - 1} e^{-\lambda x} {\rm d}x \\
+		%&=	\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} x^{\alpha + 1} e^{-\lambda x} {\rm d}x \\
+		&=	\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \frac{\Gamma(\alpha + 2)}{\lambda^{\alpha + 2}} \\
+		%&=	\frac{(\alpha + 1)\Gamma(\alpha + 1)}{\lambda^2 \Gamma(\alpha)}\\
+		&=	\frac{(\alpha + 1) \alpha \Gamma(\alpha)}{\lambda^2 \Gamma(\alpha)}\\
+		&= \frac{\alpha (\alpha + 1)}{\lambda^2}.
+	\end{aligned}
+\end{equation}
+The variance can be obtained as;
+\begin{equation}
+	\centering
+	\begin{aligned}[b]
+		Var(X) &= E(X^2) - (E(X))^2 \\
+		&=	\frac{\alpha (\alpha + 1)}{\lambda^2} - \frac{\alpha^2}{\lambda^2}	\\
+		&=	\frac{\alpha}{\lambda^2}.
+	\end{aligned}
+\end{equation}
+\section*{Gaussian distribution}
+The Gaussian model is a generalized linear model form of regression analysis used to model continuous data. The Gaussian model assumes the response variable has a Gaussian distribution.\\
+The Gaussian distribution is of the form;
+\begin{equation}
+	\centering
+	\label{eqn:Gaus}
+	f(x;\mu,\sigma) = \frac{1}{\sqrt{2 \pi} \sigma}\; exp\left({-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}}\right) &\; \mu,\sigma >0,  &\; -\infty < x < \infty
+\end{equation} 
+The likelihood of the Gaussian distribution can be obtained by the product of the functions;
+\begin{equation}
+	\centering
+	\label{eqn:gauslike}
+	L(x;\mu,\sigma) = \prod_{i=1}^{n}\left(\frac{1}{\sqrt{2 \pi} \sigma}\; exp\left({-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}}\right)\right)
+\end{equation}
+The maximum likelihood estimates are given by;
+\begin{equation}
+	\centering
+	\begin{aligned}[b]
+		\hat{\mu_{n}} & = \frac{1}{n} \sum_{j=1}^{n} X_{j} \\
+		\hat{\sigma^{2}_{n}} & = \frac{1}{n} \sum_{j=1}^{n} \left(X_{j} - \hat{\mu}\right)
+	\end{aligned}
+\end{equation}
+The mean of the Gaussian distribution is given by;
+\begin{equation}
+	\centering
+	\begin{aligned}[b]
+	E(X) & = \int_{- \infty}^{\infty} x f(x) dx\\
+	& = \frac{1}{\sigma \sqrt{2\pi}} \int_{-\infty}^{\infty} x  exp \left(- \frac{(x-\mu)^{2}}{2 \sigma^{2}}\right) dx\\
+	& = \frac{1}{\sqrt{\pi}} \left(\sqrt{2 \pi} \int_{-\infty}^{\infty} t exp(-t^{2}) dt + \mu \int_{-\infty}^{\infty} exp(-t^{2}) dt\right)\\
+	& = \frac{\mu \sqrt{\pi}}{\sqrt{\pi}}\\
+	& = \mu
+	\end{aligned}
+\end{equation}
+The variance of the Gaussian distribution is given by;
+\begin{equation}
+	\centering
+	\begin{aligned}[b]
+	Var(X) & = \int_{- \infty}^{\infty} x^{2} f(x) dx - (E(X))^{2}\\
+	       & = \frac{1}{\sigma \sqrt{2\pi}} \int_{-\infty}^{\infty} x^{2}  exp \left(- \frac{(x-\mu)^{2}}{2 \sigma^{2}}\right) dx -\mu^{2}\\
+	       & = \frac{2\sigma^{2}}{\sqrt{\pi}} \int_{-\infty}^{\infty} t^{2} exp(-t^{2})dt\\
+	       & = \frac{2\sigma^{2}}{\sqrt{\pi}} \frac{1}{2} \int_{-\infty}^{\infty} exp(-t^{2}) dt\\
+	       & = \sigma^{2}
+	\end{aligned}
+\end{equation}
+%\section*{Poisson distribution}
+%Poisson regression is a generalized linear model form of regression analysis used to model count data. Poisson regression assumes the response variable Y has a Poisson distribution, and assumes the logarithm of its expected value can be modeled by a linear combination of unknown parameters. A Poisson regression model is sometimes known as a log-linear model.\\
+%The Poisson distribution is of the form illustrated (\ref{eqn:zz})
+%\begin{equation}
+%	\centering
+%	\label{eqn:zz}
+%	f(x;\lambda) = \frac{e^{-\lambda} \lambda^{x}}{x!}
+%\end{equation}
+%The likelihood of the Poisson distribution can be obtained by the product of the functions;
+%\begin{equation}
+%	\centering
+%	\label{eqn:zz1}
+%	L(\lambda|x) = \prod_{i=1}^{n} \frac{e^{-\lambda} \lambda^{x}}{x!}
+%\end{equation}
+%The log likelihood can be expressed as the log of the likelihood.
+%\begin{equation}
+%	\centering
+%	\label{eqn:zz2}
+%	l(\lambda|x) = log 	L(\lambda|x) = \frac{-n\lambda + \sum_{i=1}^{n} x_{i} \; log(\lambda)}{\sum_{i=1}^{n} log(x_{i})}
+%\end{equation}
+%The mean of the poisson distribution is as follows;
+%\begin{equation}
+%	\centering
+%	\begin{aligned}[b]
+%	E(X) &= \sum_{x=o}^{\infty} x \; p(x,\lambda)\\
+%	     &= \sum_{x=o}^{\infty} x \; \frac{e^{-\lambda} \lambda^{x}}{x!}\\
+%	     &= \lambda \; e^{-\lambda} \left\{\sum_{x=1}^{\infty} \frac{\lambda^{x-1}}{(x-1)!}\right\}\\
+%	     &= \lambda \; e^{-\lambda} \left\{1 + \frac{\lambda}{1!} + \frac{\lambda^{2}}{2!} + \frac{\lambda^{3}}{3!} + ...\right\}\\
+%	     &= \lambda \; e^{-\lambda} (e^{\lambda})\\
+%	     &= \lambda
+%	\end{aligned}
+%\end{equation}
+%The second moment can also be obtained;
+%\begin{equation}
+	%\centering
+	%\begin{aligned}[b]
+		%E(X^{2}) &= \sum_{x=o}^{\infty} x^{2} \; p(x,\lambda)\\
+		         %&= \sum_{x=o}^{\infty} x^{2} \; \frac{e^{-\lambda} \lambda^{x}}{x!}\\
+		         %&= \sum_{x=o}^{\infty} [x(x-1)+x]  \frac{e^{-\lambda} \lambda^{x}}{x!}\\
+		         %&= \sum_{x=o}^{\infty} x(x-1) \frac{e^{-\lambda} \lambda^{x}}{x!} + \sum_{x=0}^{\infty} x %\frac{e^{-\lambda} \lambda^{x}}{x!}\\
+		         %&= \sum_{x=2}^{\infty} \frac{e^{-\lambda} \lambda^{2}}{(x-2)!} + E(X)\\
+		         %&= e^{-\lambda} \lambda^{2}  \sum_{x=2}^{\infty} \frac{\lambda^{x-2}}{(x-2)!} + \lambda\\
+		         %&= e^{-\lambda} \lambda^{2}  \left\{1 + \frac{\lambda}{1!} + \frac{\lambda^{2}}{2!} + %\frac{\lambda^{3}}{3!} + ...\right\} + \lambda \\
+		         %&=   e^{-\lambda} \lambda^{2} (e^{\lambda}) + \lambda\\
+%		         &= \lambda^{2} + \lambda
+%	\end{aligned}
+%\end{equation}
+%The variance can be obtained by subtracting the square of the mean from the second moment;
+%\begin{equation}
+%	\centering
+%	\begin{aligned}[b]
+%	Var(X) &= E(X^{2}) - (E(X))^{2}\\
+%	       &=  \lambda^{2} + \lambda - \lambda^{2}\\
+%	       &= \lambda
+%	\end{aligned}
+%\end{equation}
+\section*{Inverse Gaussian distribution}
+The inverse Gaussian distribution (also known as the Wald distribution) is a two-parameter exponential family of continuous probability distributions with support on (0,$\infty$). X$\sim$ IG($\mu$,$\lambda$) can be written to indicate that a random variable is inverse Gaussian-distributed with mean $\mu$ and shape parameter $\lambda$. 
+
+The distribution function for the Inverse Gaussian distribution can be written as;
+\begin{equation}
+	\centering
+	f(x;\mu,\lambda) = \sqrt{\frac{\lambda}{2\pi x^{3}}} exp\left(\frac{-\lambda(x-\mu)^{2}}{2\mu^{2} x}\right)
+\end{equation}
+The model where $X_{i} \sim$ IG($\mu,\lambda w_{i}$) with all $w_{i}$ known, ($\mu$,$\lambda$) unknown and all $X_{i}$ independent has the likelihood;
+\begin{equation}
+	\centering
+	L(\mu,\lambda) = \left(\frac{\lambda}{2\pi}\right)^{n/2} \left(\prod_{i=1}^{n} \frac{w_{i}}{X_{i}^{3}}\right)^{1/2} exp \left(\frac{\lambda}{\mu} \sum_{i=1}^{n} w_{i} - \frac{\lambda}{2\mu^{2}} \sum_{i=1}^{n} w_{i} X_{i} - \frac{\lambda}{2} \sum_{i=1}^{n} w_{i} \frac{1}{X_{i}}\right)
+\end{equation}
+Solving this yields;
+\begin{equation}
+	\centering
+	\begin{aligned}[b]
+	\hat{\mu} & = & \frac{\sum_{i=1}^{n} w_{i} X_{i}}{\sum_{i=1}^{n} w_{i}}\\
+	\frac{1}{\hat{\lambda}} & = & \frac{1}{n} \sum_{i=1}^{n} w_{i} \left( \frac{1}{X_{i}} - \frac{1}{\hat{\mu}}\right) 
+	\end{aligned}
+\end{equation}
+\subsection{The linear predictor}That is a linear function of regressors
+\begin{equation}
+	\centering
+	\eta = \beta_0 + \beta_1 X_1 + \cdots + \beta_{p-1}X_{p-1} 
+\end{equation}
+As in the linear model, and in the logit and probit models, the regressors $X_{ij}$ are prespecified functions of the explanatory variables and therefore may include quantitative explanatory variables, transformations of quantitative explanatory variables, polynomial regressors, dummy regressors, interactions, and so on. Indeed, one of the advantages of GLMs is that the structure of the linear predictor is the familiar structure of a linear model.
+\subsection{Link function}
+A smooth and invertible linearizing link function $g(.)$, which transforms the expectation of the response variable, $\mu_i = E(Yi)$, to the linear predictor:
+\begin{equation}
+	\centering
+	g(\mu) = \beta_0 + \beta_1 X_1 + \ldots + \beta_{p-1}X_{p-1} 
+\end{equation}
+Some common link functions include;
+\begin{table}[H]
+	\caption{Common link functions for the GLM models}
+	\centering
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		\textbf{link}           & \textbf{$\eta=g(\mu_{i})$} & \textbf{$\mu_i=g^{-1}\eta_i$} \\ \midrule
+		Identity       & $\mu_i$                                                & $\eta_i$                                                                              \\
+		Log            & $log_{e}\mu_i$                                             & $e^{\eta_i}$                                                                         \\
+		Inverse        & $\mu_{i}^{-1}$                                        &$\eta_{i}^{-1}$                                                                      \\
+		Inverse-square & $\mu_{i}^{-2}$                                 & $\eta_{i}^{-1/2}$                                                                    \\
+		Square root    & $\sqrt(\mu_i)$                                          & $\eta_{i}^2$                                                                       \\
+		Logit          & $log_e \frac{\mu_i}{1-\mu_i}$                             & $\frac{1}{1+e^{\eta_{i}}}$                                                                        \\
+		Probit         & $\phi^{-1}(\mu_i)$ &$\phi(\eta_{i})$                                                                                                          \\ \bottomrule
+	\end{tabular}
+\end{table}
+Because the link function is invertible, we can also write
+\begin{equation}
+	\centering
+	\mu_{i}=g^{-1}(\eta_{i})=g^{-1}(\beta_0 + \beta_1 X_1 + \ldots + \beta_{p-1}X_{p-1})
+\end{equation}
+and, thus, the GLM may be thought of as a linear model for a transformation of the expected
+response or as a nonlinear regression model for the response. The inverse link $g^{-1}(.)$ is also called the \textit{mean function}.  Note that the identity link simply returns its argument unaltered, $\eta_{i}$=$g(\mu_{i})$=$\mu_{i}$ and thus $\mu_{i}$=$g^{-1}(\eta_{i})$=$\eta_{i}$
+
+
+\section{Parameter Estimation of the fitted GLM model}
+The parameters of the generalized linear model will be estimated using the maximum likelihood method. When estimating the parameters, the intention is to search for the values that maximize the log likelihood. %The likelihood function is as defined in (\ref{eqn:exp}).\\
+Likelihood is written as L($\theta|y$) and is considered as a function of $\theta$, which gives the probability how likely the parameters \bm{$\theta$} are for the observed data. The estimation is for the values that maximize this probability. The set of observations $y$ = $(y1,y2,...,yn)$ are independently distributed with a distribution from the exponential family.
+%Hence, the log-likelihood function can be written as.
+\begin{equation}
+	\centering
+	f(y;\theta,\phi) = exp\left(\frac{y\theta-b(\theta)}{a(\phi)} + c(y,\phi)\right)
+\end{equation}
+The likelihood function can be written as the product of the distributions:
+\begin{equation}
+	\centering
+	L(\theta,\phi) = f(\theta,\phi|y) = \prod_{i=1}^{n} f_{i} (\theta,\phi|y)
+\end{equation}
+and on the logarithm scale this independence gives us an additive property. The log likelihood can be written as:
+\begin{equation}
+	\centering
+	l(\theta,\phi) = log\; f_{y}(\theta,\phi|y) = \sum_{i=1}^{n} log\; f_{i}(\theta,\phi|y)
+\end{equation}
+%By differentiating \textit{l} w.r.t. the elements of $\beta$, the regression coefficients, using the chain rule the following is obtained.
+%\begin{equation}
+%	\frac{\partial \textit{l}}{\partial \beta_{j}} = \frac{\partial \textit{l}}{\partial \theta} \frac{\partial \theta}{\partial \mu} \frac{\partial \mu}{\partial \eta} \frac{\partial \eta}{\partial \beta_{j}}
+%\end{equation}
+%The relations of $b^{\prime}$= $\mu$, $b^{\prime\prime}$= V and $\eta$= $\sum_{j}x_{j}\beta_{j}$ implies that $\frac{\partial \mu}{\partial \theta}$= V and $\frac{\partial \eta}{\partial \beta_{j}}$= $x_{j}$.\\
+%By defining 
+%\begin{equation}
+%	W^{-1}= \left(\frac{\partial \eta}{\partial \mu}\right)^{2} V
+%\end{equation}
+%and inserting these expressions in the differential equations above yields
+%\begin{equation}
+%	c\frac{\partial \textit{l}}{\partial \beta_{j}}= \frac{(y-\mu)}{a(\phi)} \frac{1}{V} \frac{\partial \mu}{\partial \eta} x_{j} = \frac{W}{a(\phi)} (y-\mu)\frac{\partial \eta}{\partial \mu}x_{j}
+%\end{equation}
+%The above expressions are valid for one single observation and the extensive notation of the likelihood for one parameter $\beta_{j}$ is given by summing over the observations in the following way
+%\begin{equation}
+%	\sum_{i}^{}\frac{W_{i}(y_{i}-\mu_{i})}{a(\phi)}\frac{\partial \mu_{i}}{\partial \eta_{i}} x_{ij}
+%\end{equation}
+%This can be solved w.r.t $\beta_{j}$ since we have that the $\mu_{i}'s$ are functions of the $\beta_{j}'s$. The asymptotic variances and covariance matrix of the estimated parameters is obtained by the inverse of the Fisher information matrix \textit{$l_{\theta}$}
+
+%\begin{equation}
+%	\centering
+%	\begin{pmatrix}
+%		var(\hat{\beta}_{0}) & cov(\hat{\beta}_{0},\hat{\beta}_{1}) & . & . & . & cov(\hat{\beta_{o}},\hat{\beta}_{p-1}) \\
+%		cov(\hat{\beta}_{1},\hat{\beta}_{0}) & var(\hat{\beta}_{1}) & . & . & . & . \\
+%		. & . &  &  &  & . \\
+%		. & . &  &  &  & . \\
+%		&  &  &  &  &  \\
+%		cov(\hat{\beta}_{p-1},\hat{\beta}_{0}) & & . & . & . & var(\hat{\beta}_{p-1}) 
+%	\end{pmatrix}
+%\end{equation}
+
+%\begin{equation}
+%	\centering
+%	 = \bm{-E}\begin{pmatrix}
+%		\frac{\partial l}{\partial \beta_{0}^2} & \frac{\partial l}{\partial \beta_{0}}\frac{\partial l}{\partial \beta_{1}} & . & . & . & \frac{\partial l}{\partial \beta_{0}}\frac{\partial l}{\partial \beta_{p-1}} \\
+		%\frac{\partial l}{\partial \beta_{1}}\frac{\partial l}{\partial \beta_{0}} & \frac{\partial l}{\partial %\beta_{1}^2} & . & . & . & . \\
+		%. & . & . &  &  & . \\
+		%. & . &  & . &  & . \\
+		%. &  &  &  & . &  \\
+		%\frac{\partial l}{\partial \beta_{p-1}}\frac{\partial l}{\partial \beta_{0}} & . & . & . & . & %\frac{\partial l}{\partial \beta_{p-1}^2} 
+%	\end{pmatrix}
+%\end{equation}
+%{\subsection{Numerical procedures of parameter estimation}
+%Maximizing the log-likelihood is done by putting the log-likelihood function in extensive notation equal to zero and solve the equation which is done numerically. An approach that is 
+%commonly used is iteratively re-weighted least squares which is described as follows:
+%\begin{enumerate}
+%	\item Linearize the link function \textit{g(.)} with for example first order Taylor approximation in the following way
+%	\begin{equation}
+%		g(y) \approx z, \; z = g(\mu) + (y-\mu) g'(\mu)
+%	\end{equation}
+%	\item If we let $\hat{\eta_{0}}$ be the current estimate of the linear predictor and we let$\hat{\mu_{0}}$ be the corresponding fitted value given from the link function $\eta$= g($\mu$) then we can form the adjusted dependent variate as 
+%	\begin{equation}
+%		z_{0} = \eta_{0} + (y-\hat{\mu_{0}})\left(\frac{\partial \eta}{\partial \mu}\right)^{2}
+%	\end{equation}
+%	which is evaluated at $\hat{\mu_{0}}$
+%	\item Derive the weighted matrix \textbf{W} from
+%	\begin{equation}
+	%	\bm{W}^{-1} = \left(\frac{\partial \eta}{\partial \mu}\right)^{2} V_{0}
+	%\end{equation}
+	%V denoted the variance function.
+	%\item Run a weighted regression of z which is the dependent variable on the predictors $x_{1},x_{2},...,x_{p}$ using the %weights $W_{0}$. This yields new, updated values of the estimated parameter $\hat{\beta_{1}}$, from which one can calculate %an updated value of the linear predictor estimate $\hat{\eta_{1}}$.
+%	\item Repeat step 1-4 until the stop conditions are applied.
+%\end{enumerate}}
+%------------------------------------------------------------------------
+%\subsection{Exponential distribution}
+%The exponential distribution is the probability distribution of the time between events in a Poisson point process, that is a process in which events occur continuously and independently at a constant average rate. It is a particular case of the gamma distribution. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless. In addition to being used for the analysis of Poisson point processes it is found in various other contexts.\\
+%Its pdf can be written as follows;
+%\begin{equation}
+%	f_X(x) = 
+%	\begin{cases}
+%		\lambda e^{-\lambda x} & x > 0 \;,\; \lambda > 0\\
+%		0 & \text{otherwise.}
+%	\end{cases}
+%\end{equation}
+
+%The exponential distribution is not the same as the class of exponential families of distributions, which is a large class of probability distributions that includes the exponential distribution as one of its members.\\
+
+%The estimates of $\lambda$ can be obtained using the MLE. The likelihood is obtained as is expressed as follows;
+%\begin{equation}
+%	\centering
+%	L(\lambda;x_{1},...,x_{n}) = \lambda^{n} exp\left(-\lambda \sum_{i=1}^{n} X_{i}\right)
+%\end{equation}
+%The log-likelihood can also be obtained by taking the logarithms on both sides
+%\begin{equation}
+%	\centering
+%	l(\lambda;x_{1},...,x_{n}) = n log(\lambda) - \lambda \sum_{i=1}^{n} X_{i}
+%\end{equation}
+%The MLE of $\lambda$ is as follows
+%\begin{equation}
+%	\centering
+%	\hat{\lambda}_{n} = \frac{n}{\sum_{i=1}^{n} X_{i}}
+%\end{equation}
+%\subsection{Weibull distribution}
+%The two parameter Weibull distribution is part of the exponential family of distribution. The parameters are $\lambda$ and $k$
+%\begin{equation}
+%	\centering
+%	\label{eqn:WB}	
+%	f_X(x; \lambda, k) = \left\{ \begin{array}{cl}
+%		\frac{k}{\lambda}(\frac{x}{k})^{k-1} e^{-(x/\lambda)^k} & \ ; \ x \geq 0 \\
+%		0 & \ ; \ x < 0 \end{array} \right. \	
+%\end{equation}
+%\begin{equation}
+%	\centering
+%	f_\lambda(y;k) = \exp\left(a(y;k)b(\lambda;k) + c(\lambda;k) + d(y;k) \right)
+%\end{equation}
+
+%\begin{equation}
+%	\label{eqn:weib}
+%	\centering
+%	\begin{aligned} \log f(y;\lambda,k) &= \log (k/\lambda) + (k-1)\log(y/\lambda) - (y/\lambda)^{k}\\ &= \log(k) - \log(\lambda) + (k-1)(\log(y)-\log(\lambda)) - (y/\lambda)^{k}\\ %&= \underbrace{\log(k) - k \log(\lambda)}_{c(\lambda;k)} + \underbrace{(k-1)\log(y)}_{d(y;k)}+\underbrace{\left( \lambda^{-k}\right)}_{b(\lambda;k)}\underbrace{y^k}_{a(y;k)}
+%	\end{aligned}
+%\end{equation}
+%\\
+
+%The MLE of the 2-parameter Weibull distribution can be found whereby from the probability density function of the distribution, $\lambda$ and $k$ are the shape and scale parameters respectively.\\
+%The corresponding log-likelihood function can be recast as follows
+%\begin{equation}
+%	\centering
+%	\begin{aligned}
+%		 L(\lambda ,k ) = \left( \frac{\theta (k )}{\lambda} \right) ^k +k log \frac{\lambda }{\tau }-\log k 
+%	 \end{aligned}
+%\end{equation}
+%where
+%\begin{equation}
+%	\centering
+%\begin{aligned} \ln \tau = \frac{1}{n} \sum _{i=1}^{n}\delta _{k}\ln x_{i} \qquad \text {and} \qquad \theta (k ) = \left( \frac{1}{n} \sum _{i=1}^{n} x_{i}^k \right) ^{1/k }. \end{aligned}	
+%\end{equation}
+\section{Model selection}
+This section introduces the method that will be used in choosing the best distribution to use.
+\subsection{Akaike information criterion (AIC)}
+The AIC is a measure of fit that is often used as a means for choosing between models is the following expression
+%\begin{equation}
+%	\centering
+%	D_c= D-\alpha q \phi
+%\end{equation}
+%where D is the deviance, q is the number of parameters that are included in the model and $\phi$ is the dispersion parameter. The general idea is to penalize models that includes extra parameters 
+%and by that favour simpler models. When $\alpha$ = 2, the above measure is known as the Akaike’s Information Criterion, AIC, which can also be written as
+\begin{equation}
+	\centering
+	AIC = -2\ln(L) + 2q
+\end{equation}
+where L is referred to the maximum value of the likelihood function for the model and again, q is the number of parameters included in the model. This measure can be used when deciding if or not to include an explanatory variable in a model since the model with the lowest AIC value is preferred over larger values when comparing full and nested model, where one or more variables which are included in the full model have been removed.
+\section{Assessing the fit of the model}
+When assessing the fit of a statistical model, the model is evaluated on the discrepancy between the observed values and the predicted values, ergo, how well the model results corresponds to 
+the true values. The measures of assessing the fit of the model chosen for this study is a Wald test, Pearson $\chi^{2}$ statistics, Akaike’s Information Criterion and multicollinearity.
+%\subsection{Variable significance using Wald test}
+%A significance test can be performed to ensure that the chosen variables are significant, and one
+%method of doing this is to perform the Wald test. The outline of the test is to fit a unrestricted
+%model and assess if the results are within the range of sampling variability and agree with the	hypothesis.
+%To perform tests on individual coefficients from the model is a simple case of the Wald test.
+%We can write the null hypothesis as follows: 
+%\begin{equation}
+%	\centering
+%	\begin{aligned}
+%	H_{0}:&\beta_i =0 \\ 
+%	H_{1}:&\beta_i\ne0 
+%	\end{aligned}	
+%\end{equation}
+%And the following equations yields the test statistics for the null hypothesis 
+%\begin{equation}
+%	\centering
+%	W_{T} = \frac{[\hat{\beta}]^{2}}{se(\beta)}
+%\end{equation}
+%Where $\hat{\beta}$  is the maximum likelihood estimator and $Se(\beta)$ is the standard error of the maximum likelihood coefficient estimate. If the Wald test shows the parameters to certain independent variables are zero that is: the null hypothesis fails to be rejected its concluded that they are insignificant and thus can be removed from the model and if they are non zero then the parameters can be included in the model.
+\subsection{Chi-square goodness of fit test} 
+
+The way of testing the goodness of fit of the model is the generalized Pearson $\chi^2$ test, which
+has the following definition
+\begin{equation}
+	\centering
+	\chi^2 = \sum_{i=1}^{n}\left(\frac{(O_{i}-E_{i})^2}{E_{i}}\right)	
+\end{equation}
+The hypothesis of the chi-square test can be written as;
+\begin{equation}
+	\centering
+	\label{eqn:chihypo}
+	\begin{aligned}
+		H_{0}:&  The \; model \; does \; not \; fit \; the \; data\\ 
+		H_{1}:&  The \; model \; fits \; the \; data	
+	\end{aligned}
+\end{equation}
+where, \textbf{O} is the observed value and \textbf{E} is the expected value.
+The value of $\chi^2$ is then compared against the critical value of $\chi^2_c $ on a given significance level and with given degrees of freedom. If the critical value is less than the calculated value, then the null hypothesis that the distribution is true can be rejected, hence the model does not fit the data well based on the given level of significance.
+
+%\subsection{Residual analysis}
+
+%	\subsubsection{Pearson residual}
+	
+%	Pearson residual is based on the idea of subtracting off the mean and dividing by the standard deviation.
+%	\begin{equation}
+%		r_i = \frac{y_i - \pi_i}{\sqrt{\widehat{\pi_i}(1-\widehat{\pi})}}
+%	\end{equation}
+	%\subsubsection{Likelihood Ratio Test and Deviance}
+%Deviance = $-2(\ell_M-\ell_S)$
+%$\ell$ is the maximized log likelihood.
+
+%Denote the parameter of the model by $\theta$ and the parameter of the supermodel by $\sigma$.
+%\begin{equation}
+%	\label{eqn:spm}
+%	\centering
+%\begin{aligned}
+%	-2(\ell_M-\ell_S) & = -2log\frac{ \prod_{i=1}^n f(y_i|\widehat{\theta}) }
+%	{ \prod_{i=1}^n f(y_i|\widehat{\sigma}) }\\
+%	& = -2log \prod_{i=1}^n \frac{f(y_i|\widehat{\theta})}
+%	{f(y_i|\widehat{\sigma})} \\
+%	& = \sum_{i=1}^n -2\log \left(\frac{f(y_i|\widehat{\theta})}
+%	{f(y_i|\widehat{\sigma})} \right) \\
+%	& = \sum_{i=1}^n d_i
+%\end{aligned}	
+%\end{equation}
+	 
+
+%Deviance = $-2(\ell_M-\ell_S)$ 
+%$\ell$ is the maximized log likelihood
+
+%Denote the parameter of the Model by $\theta$ and the parameter of the Supermodel by $\sigma$
+%\begin{equation}
+%	\centering
+%	\begin{aligned}
+%		-2(\ell_M-\ell_S) & = -2log\frac{ \prod_{i=1}^n f(y_i|\widehat{\theta}) }
+%		{ \prod_{i=1}^n f(y_i|\widehat{\sigma}) }\\
+%		& = -2log \prod_{i=1}^n \frac{f(y_i|\widehat{\theta})}
+%		{f(y_i|\widehat{\sigma})} \\
+%		& = \sum_{i=1}^n -2\log \left(\frac{f(y_i|\widehat{\theta})}
+%		{f(y_i|\widehat{\sigma})} \right) \\
+%		& = \sum_{i=1}^n d_i
+%	\end{aligned} 
+%\end{equation}
+
+%\begin{equation}
+%	\centering
+%	Deviance = -2log\frac{ \prod_{i=1}^n f(y_i|\widehat{\theta}) }
+%	{ \prod_{i=1}^n f(y_i|\widehat{\sigma}) }= {\sum_{i=1}^n d_i}
+%\end{equation}
+ %The deviance terms $d_i$ are contributions to a difference in fit (deviance) between the model and the best possible model. The deviance residuals are defined as $\;$ $r^D_i =$\;$ $sign$(y_i-\widehat{\mu}_i)\sqrt{d_i}$.
+ %The model with highest log likelihoood will be considered the better model. 
+
+%\subsection{Multicolinearity}
+%In multiple regression, when a number of the explanatory variables are closely dependent on each other, the problem of multicollinearity arises. Multicollinearity can result in larger confidence intervals and larger variances and covariances which might cause skewed results or misinterpreted analyses when predicting the response variable.\\
+%One way to detect the presence of multicollinearity is to calculate the VIF, Variance Inflation Factor, which is the ratio of the variance of the values of the coefficients $\beta_{j}$ $\;$ of the full model divided by the variance of the single value of $\beta_{j}$ $\;$if fitted alone.\\
+%The VIF is computed in the following way
+%\begin{equation}
+%	\centering
+%	VIF=\frac{1}{1 - {R^{2}}_{x_{j}|x-j}}	
+%\end{equation}
+%where ${R^{2}}_{x_{j}|x-j}$ is the $R^2$ from a linear regression of $X_j$ onto all other independent variables.\\
+%VIF starts at 1 and has no upper limit. A value of 1 indicates there is no correlation between the independent variables and other factors. A VIF between 1 to 5 suggests moderate correlation but not severe enough to warrant corrective measures. VIF greater than 5 indicates critical level of multicollinearity and thus such variables should be excluded from the model. In practice though, there will likely be a small amount of multicollinearity between the variables.
+
+\section{Prediction using the fitted model}
+The acquired supermarket sales data includes the total sales of a certain product. Hence, this can be referred to as a response variable that counts the occurrences of a specific event, and therefore the data can be considered as count data since the observations of the sold quantity is restricted to non-negative integer values. %Therefore, since modeling the relationship between the response variable as a count, the Gamma distribution will be assumed as the appropriate distribution for the initial trials of modeling the predicted sales quantity.\\
+The collected data needs to be restructured in order to be able to perform the analysis. The independent variables to be included in the model will be chosen out of the total collected data. Subsequently, each of those explanatory variables will be clustered together in order for better classifying the characteristics for the variables. The equation of the model that will produce the forecast will follow the form of equation (\ref{eqn:GLMpred})
+\begin{equation}
+	\centering
+	\label{eqn:GLMpred}
+	\hat{P}(Y|X) = \frac{exp ( \beta_0 + \beta_{1} X_{1} + \beta_{2} X_{2} + \cdots +\beta_{p} X_{p})}{1+ exp (-( \beta_0 + \beta_{1} X_{1} + \beta_{2} X_{2} + \cdots +\beta_{p} X_{p}))}
+\end{equation}
+\section{Checking the Accuracy of predicted sales}
+This section presents a way in which the predicted sales are analyzed to check their accuracy.
+%The main goal of the GLM model is to obtain a suitable distribution from the exponential family for the random component to forecast sales. The best model will be applied to the supermarket sales so as to get accurate forecasts. 
+The mean squared error will be used to assess the accuracy of the forecasts and the observed observations. The MSE is calculated as follows;
+\begin{equation}
+	\centering
+	\label{eqn:MSE}
+	MSE = \frac{1}{n} \sum_{i=1}^{n}(Y_{i}-\hat{Y_{i}})^2
+\end{equation}
+where $Y_{i}$ are the observed values and $\hat{Y_{i}}$ are the predicted values. The MSE measures how close the regression line is to a set of data points. A large MSE indicates that there is a wide dispersion of data around its mean while a smaller MSE indicates that the data are closely dispersed around the mean. A smaller MSE is preferred since it shows that the forecasted values are more accurate than in a larger MSE.
+
+%\section{Data Source and Data Description}
+%The data to be used in this study is readily available in the Kaggle website under the $https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales$. The dataset is one of the historical sales of supermarket company which has recorded in 3 different branches for 3 months data. The dataset consists of 1001 observations which include 10 variables: customer type; either a member or normal, the gender; male or female, the unit price of the goods purchased, the quantity, tax at 5\%, the total amount of the purchased items, cost of goods sold, gross margin, gross income and the rating that was provided by the serviced customer. The total sales is the dependent variable. There are 3 continuous independent variables which are; unit price of goods, the quantity and tax.

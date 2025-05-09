@@ -1,0 +1,74 @@
+\documentclass[twoside,a4paper,12pt]{article}
+\usepackage{fancyhdr,times,geometry,amsmath}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{lipsum}
+\usepackage{mwe}
+\geometry{a4paper, top=0.35in, bottom=0.35in, left=0.35in, right=0.35in}
+\begin{document}
+\section{Introduction}	
+	\begin{equation}
+		f(y|\theta_i,\phi) = 
+		\exp\left\{ \frac{y\theta_i-b(\theta_i)}{\phi} + c(y,\phi)\right\}
+	\end{equation} 
+	where$\theta_i$ is the canonical parameter that depends on regressors via the linear predictor further, $\phi$ is the dispersion parameter often known.the functions a(.), b(.) and c(.) are known and determine which member of the family is used.
+	The log likelihood of equation(3.2.2) expressed as a function of$\theta_i$ and$\phi$ is given by\centering
+	\begin{equation}
+		l(\theta_i,\phi;y_i)= logf_y(y_i;\theta_i,\phi) 
+	\end{equation}
+	
+	consequently the log likelihood is given by
+	\begin{equation} 
+		l(\theta_i,\phi;y_i) =\left\{ \frac{y\theta_i-b(\theta_i)}{\phi} + c(y,\phi)\right\}
+	\end{equation}
+	we require expressions for the first and second derivatives of the log likelihood in terms of the mean and variances of$y_i$ and the function of $a(\phi)$.According to stuart and kendall(1963), we can derive the mean and variance using the results
+	\begin{equation}
+		E\left(\frac{\partial l(\theta_i,\phi;y_i)}{\partial\theta_i}\right)=0
+	\end{equation}
+	\begin{equation}	
+		E\left(\frac{\partial^2 l(\theta_i,\phi;y_i)}{\partial\theta_i^2}\right)= -E\left(\frac{\partial l(\theta_i,\phi;y_i)}{\partial\theta_i}\right)^2
+	\end{equation}
+	
+	First by the partial derivative of the log likelihood with respect to $\theta_i$, we obtain 
+	\begin{equation}
+		E\left(\frac{\partial l(\theta_i,\phi;y_i)}{\partial\theta_i}\right)=\frac{y_i-b\prime(\theta_i)}{a(\phi)}
+	\end{equation}
+	
+	where primes denotes differentiation with respect to $\theta_i$. By taking the expectation and setting the equation to zero,we have
+	\begin{equation}
+		E\left(\frac{y_i-b\prime(\theta_i)}{a(\phi)}\right)=0
+	\end{equation}
+	\begin{equation}
+		\frac{\mu_i-b\prime(\theta_i)}{a(\phi)}= 0
+	\end{equation}
+	
+	consequently we find the mean 
+	\begin{equation}
+		E(y_i) = b\prime(\theta_i)= \mu_i 
+	\end{equation}
+	for$ a(\phi)\ne0$
+	
+	
+	The variance can be derived by taking the second partial derivative of the log likelihood function with respect to $\theta_i$, we obtain
+	\begin{equation}
+		\frac{\partial^2 l(\theta_i,\phi;y_i)}{\partial\theta_i^2}=\frac{-b\prime\prime(\theta_i)}{a(\phi)}
+	\end{equation}
+	substituting the formulas in equation (3.2.7) and equation (3.2.11) into equation(3.2.6)
+	\begin{equation}
+		E\left(\frac{-b\prime\prime(\theta_i)}{a(\phi)}\right)=E\left(\frac{y_i-b\prime(\theta_i)}{a(\phi)}\right)^2
+	\end{equation}
+	
+	Reordering and using $var(y_i)=E[(y_i-E(y_i))^2]$ 
+	where$ E(y_i)=b\prime(\theta_i)$
+	
+	\begin{equation}
+		\frac{-b\prime\prime(\theta_i)}{a(\phi)}=\frac{-var(y_i)}{a(\phi)^2}
+	\end{equation}
+	we find,
+	\begin{equation}
+		var(y_i)=b\prime\prime(\theta_i)a(\phi)=V(\mu_i)a(\phi)
+	\end{equation}
+\end{document}

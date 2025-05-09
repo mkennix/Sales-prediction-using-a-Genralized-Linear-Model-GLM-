@@ -1,0 +1,82 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: biblatex.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Thesis-blx.bib
+Database file #2: references.bib
+Repeated entry---line 19 of file references.bib
+ : @control{biblatex-control
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 23 of file references.bib
+ : @article{article
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 106 of file references.bib
+ : @article{article
+ :                 ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 231 of file references.bib
+ :  
+ :  year={2018}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Biblatex version: 3.3
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+You've used 10 entries,
+            6047 wiz_defined-function locations,
+            1183 strings with 9428 characters,
+and the built_in function-call counts, 28554 in all, are:
+= -- 1140
+> -- 866
+< -- 268
++ -- 255
+- -- 267
+* -- 2015
+:= -- 1804
+add.period$ -- 0
+call.type$ -- 10
+change.case$ -- 152
+chr.to.int$ -- 40
+cite$ -- 18
+duplicate$ -- 3198
+empty$ -- 3170
+format.name$ -- 497
+if$ -- 6551
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 0
+newline$ -- 236
+num.names$ -- 434
+pop$ -- 2946
+preamble$ -- 1
+purify$ -- 166
+quote$ -- 0
+skip$ -- 1636
+stack$ -- 0
+substring$ -- 707
+swap$ -- 1094
+text.length$ -- 236
+text.prefix$ -- 9
+top$ -- 1
+type$ -- 368
+warning$ -- 0
+while$ -- 221
+width$ -- 0
+write$ -- 225
+(There were 4 error messages)

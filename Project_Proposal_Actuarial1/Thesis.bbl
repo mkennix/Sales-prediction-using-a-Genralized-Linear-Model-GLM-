@@ -1,0 +1,242 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{bax2018listing}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Dane}{D.}%
+     {Bax}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AOSIS}%
+  }
+  \strng{namehash}{DB1}
+  \strng{fullhash}{DB1}
+  \field{labelyear}{2018}
+  \field{sortinit}{D}
+  \field{number}{1}
+  \field{pages}{1\bibrangedash 11}
+  \field{title}{Listing price estimation of apartments: A generalised linear
+  model}
+  \field{volume}{12}
+  \field{journaltitle}{Journal of Economic and Financial Sciences}
+  \field{year}{2018}
+\endentry
+
+\entry{elliot2019time}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Elliot}{E.}%
+     {Cheng~Hua}{C.~H.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ECH1}
+  \strng{fullhash}{ECH1}
+  \field{labelyear}{2019}
+  \field{sortinit}{E}
+  \field{pages}{50\bibrangedash 70}
+  \field{title}{Time series prediction: Predicting stock price}
+  \field{volume}{6}
+  \field{journaltitle}{Predicting stock price}
+  \field{year}{2019}
+\endentry
+
+\entry{karlsson2020purchase}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karlsson}{K.}%
+     {Sofia}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KS1}
+  \strng{fullhash}{KS1}
+  \field{labelyear}{2020}
+  \field{sortinit}{K}
+  \field{pages}{100\bibrangedash 130}
+  \field{title}{Purchase analysis in the retail industry using Generalized
+  Linear Models}
+  \field{volume}{10}
+  \field{year}{2020}
+\endentry
+
+\entry{lasek2019restaurant}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Lasek}{L.}%
+     {Agnieszka}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cercone}{C.}%
+     {Nick}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Saunders}{S.}%
+     {Jim}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{LA+1}
+  \strng{fullhash}{LACNSJ1}
+  \field{labelyear}{2019}
+  \field{sortinit}{L}
+  \field{pages}{479\bibrangedash 491}
+  \field{title}{Restaurant sales and customer demand forecasting: Literature
+  survey and categorization of methods}
+  \field{journaltitle}{Smart city 360}
+  \field{year}{2019}
+\endentry
+
+\entry{article}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Müller}{M.}%
+     {Marlene}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MM1}
+  \strng{fullhash}{MM1}
+  \field{labelyear}{2018}
+  \field{sortinit}{M}
+  \field{isbn}{978-3-540-66207-5}
+  \field{pages}{160\bibrangedash 250}
+  \field{title}{Generalized Linear Models}
+  \field{journaltitle}{parametric and a semiparametric model}
+  \field{month}{02}
+  \field{year}{2018}
+\endentry
+
+\entry{nelder1972generalized}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Nelder}{N.}%
+     {John~Ashworth}{J.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wedderburn}{W.}%
+     {Robert~WM}{R.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Wiley Online Library}%
+  }
+  \strng{namehash}{NJA+1}
+  \strng{fullhash}{NJAWRW1}
+  \field{labelyear}{1972}
+  \field{sortinit}{N}
+  \field{number}{3}
+  \field{pages}{370\bibrangedash 384}
+  \field{title}{Generalized linear models}
+  \field{volume}{135}
+  \field{journaltitle}{Journal of the Royal Statistical Society: Series A
+  (General)}
+  \field{year}{1972}
+\endentry
+
+\entry{sazontyevrossmann}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Sazontyev}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{S1}
+  \strng{fullhash}{S1}
+  \field{labelyear}{2018}
+  \field{sortinit}{S}
+  \field{number}{1}
+  \field{pages}{137\bibrangedash 175}
+  \field{title}{Rossmann store sales quantity prediction}
+  \field{volume}{50}
+  \field{journaltitle}{Sales prediction}
+  \field{year}{2018}
+\endentry
+
+\entry{yilmaz2020forecasting}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Yilmaz}{Y.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{Y1}
+  \strng{fullhash}{Y1}
+  \field{labelyear}{2020}
+  \field{sortinit}{Y}
+  \field{number}{4}
+  \field{pages}{274\bibrangedash 291}
+  \field{title}{Forecasting house prices in Turkey: GLM, VaR and time series
+  approaches}
+  \field{volume}{9}
+  \field{journaltitle}{Journal of Business Economics and Finance}
+  \field{year}{2020}
+\endentry
+
+\entry{zelingher2020assessing}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zelingher}{Z.}%
+     {Rotem}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Makowski}{M.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Brunelle}{B.}%
+     {Thierry}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Frontiers}%
+  }
+  \strng{namehash}{ZR+1}
+  \strng{fullhash}{ZRMDBT1}
+  \field{labelyear}{2020}
+  \field{sortinit}{Z}
+  \field{pages}{171}
+  \field{title}{Assessing the sensitivity of global maize price to regional
+  productions using statistical and machine learning methods}
+  \field{volume}{5}
+  \field{journaltitle}{Frontiers in Sustainable Food Systems}
+  \field{year}{2020}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

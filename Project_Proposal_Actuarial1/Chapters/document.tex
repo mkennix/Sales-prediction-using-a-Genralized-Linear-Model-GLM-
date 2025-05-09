@@ -1,0 +1,170 @@
+\documentclass[twoside,a4paper,12pt]{article}
+
+\usepackage{fancyhdr,times,geometry,amsmath}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{lipsum}
+\usepackage{mwe}
+\geometry{a4paper, top=0.35in, bottom=0.35in, left=0.35in, right=0.35in}
+
+
+\begin{document}
+\section{Introduction}
+
+\section{Generalized Linear Models}
+
+Generalised linear models (GLMs) relate the response variable which we want to predict, to the explanatory variables or factors (called predictors, covariates or independent variables) about which we have information.Generalized linear model takes the form:
+
+y_i$ =\beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1} $
+
+\subsection{Assumptions of Generalized linear models}
+\begin{itemize}
+	\item The linear component is retained
+	\item  Distributions are restricted to the exponential dispersion family
+	\item   Responses are independent.
+	\item The mean response changes with the conditions, but the functional shape of the distribution remains fundamentally unchanged.
+	\item The mean response, or some transformation of it, changes in some	linear way as the conditions change.
+	
+\end{itemize}
+
+
+
+{Components of a Generalized Linear Model}
+
+\begin{itemize}
+	\item \textbf{Random Component}:  Probability distribution for $Y$
+	\item \textbf{Systematic component}:  Specifies explanatory variables in the form of a ``linear predictor € that looks like a regression equation.
+	\item \textbf{Link function}:  Connects $\mu = E(Y|\mathbf{X})$ to the linear predictor
+	
+\end{itemize}
+
+\subsection{Random Component: Distribution of $Y$}
+\begin{itemize}
+	\item Ordinary regression: Normal
+	\item Logistic regression: Bernoulli
+	\item Poisson regression: Poisson
+	
+	\item Other possibilities: Binomial, Exponential, Gamma, Geometric  \ldots
+	
+\end{itemize}
+gamma Distribution
+$\frac{1}{\gamma(v)}*(\frac{vy}{\mu})^v*exp(-\frac{vy}{\mu})d(logy)$
+
+Link function 
+$g(\mu) = \frac{1}{\mu} 
+$	
+$	
+
+$	
+mean $E(Y)={\mu}
+$
+
+$var(y)=\frac{\mu^2}{v}$	
+
+$E(y-\mu)^3=2 \frac{\mu^3}{v^2}$
+
+The canonical link $\eta$= $\mu^-1
+$			
+
+\subsection{Systematic component}
+
+A regression-like equation called the{ \emph{linear predictor}}
+{\LARGE
+	\begin{displaymath}
+		\eta = \beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1} 
+	\end{displaymath}
+} % End size
+
+
+
+\subsection{Link Function}
+The linear predictor is an increasing function of the expected value}
+
+{\LARGE
+\begin{displaymath}
+	g(\mu) = \beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1} 
+\end{displaymath} }
+
+\begin{itemize}
+\item The function $g(x)$ is strictly increasing.
+\item The linear predictor is an increasing function of $\mu$.
+\item So $\mu$ is an increasing function of the linear predictor.
+\end{itemize}
+
+
+
+
+\section{The Exponential Family of Distributions}
+
+
+
+\begin{itemize}
+\item Includes most of the familiar distributions
+\item Provides a unified theory for generalized linear models
+\item Leads to a general, highly efficient method for finding MLEs numerically
+\begin{itemize}
+	\item Iterative weighted least squares
+	\item Closely related to Newton-Raphson
+\end{itemize}
+\item Points to a \emph{natural} link function.
+\item The ``natural" parameter of a one-parameter exponential family is $\theta=g(\mu)$.
+\item The link functions we have been using are natural links.
+\end{itemize}
+``Natural" Exponential Family of Distributions
+
+
+{\LARGE
+\begin{displaymath}
+	f(y|\theta,\phi) = 
+	\exp\left\{ \frac{y\theta-b(\theta)}{\phi} + c(y,\phi)\right\}
+\end{displaymath} }
+\begin{itemize}
+\item Support does not depend on $\theta$ or $\phi$.
+\item $\theta$ is the natural parameter.
+\item $\phi$ is the dispersion parameter, often known.
+\item $\theta=g(\mu)$, where $\mu=E(Y)$
+%    \item This is the \emph{natural} link function: set $g(\mu) =  \beta_0 + \beta_1 x_1 + \ldots, + \beta_{p-1}x_{p-1}$
+\item $E(Y) = b^\prime(\theta)$ gives $\mu=g^{-1}(\theta)$
+\item $Var(Y) =  \phi \, b^{\prime\prime}(\theta) = \phi V(\mu)$
+\item $V(\mu)$ is called the \emph{variance function}.
+\end{itemize}
+
+
+
+\subsection {Gamma distribution as an exponential family distribution}
+\begin{displaymath}	f(y|\theta,\phi)={\frac{\lambda^\alpha}{\gamma(\alpha)}} y^{\alpha-1}exp(-\lambda y)
+\end{displaymath} 
+changing the parameters from $\alpha$ and $\lambda$ to $\alpha$ and $\mu$=$\frac{\alpha}{\lambda}$
+\begin{displaymath}	f(y|\theta,\phi)={\frac{\lambda^\alpha}{\gamma(\alpha)}} y^{\alpha-1}exp(-\lambda y) ={\frac{\alpha^\alpha}{\mu^\alpha \gamma(\alpha)}}y^{\alpha-1} exp(-\frac{y\alpha}{\mu})
+\end{displaymath} 
+$\theta$ = -$\frac{1}{\mu}$
+
+$\phi$ = $\alpha$
+
+$a(\phi) = \frac{1}{\phi}$
+
+b($\theta$) = -log(-$\theta$)
+
+c(y,$\phi$) = ($\phi$-1)log y+ $\phi$log$\phi$-log$\gamma$($\phi$)
+
+thus the natural parameter for the gamma distribution is
+
+$	\frac{1}{\mu}$ ignoring the minus sign.
+
+$
+The mean E(Y)$ = b^{$\prime$$(\theta)}$ gives \mu=-\frac{1}{\theta}$.
+The variance function is v($\mu$) = $b^{\prime\prime}($\theta$)=  $\frac{1}{\theta^2}={\mu^2}$
+and thus the variance is  $\frac{\mu^2}{\alpha}
+
+
+
+
+\section{Forecasting}
+\section{Data description}
+
+
+
+\end{document}
